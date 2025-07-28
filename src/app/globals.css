@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@theme default {
+  --font-poppins: 'poppins',
+  --color-brown: #AEA46B,
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: white;
+    --foreground: black;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);  
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.display-none {
+  display: flex;
+}
+
+.display-flex {
+  display: none;
+}
+
+.display-block {
+  display: none;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .display-flex {
+    display: flex;
+  }
+
+  .display-block {
+    display: block;
+  }
+
+  .display-none {
+    display: none;
+  }
+}
+
+/* Green */
+/* background color */
+/* bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] */
+
+/* text color */
+/* text-transparent bg-clip-text bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] */
