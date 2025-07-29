@@ -17,8 +17,8 @@ import img6 from '../../../public/image/tree/impact/img6.png'
 export default function Impact() {
   return (
     <div className='flex flex-col items-center font-poppins lg:mt-0 -mt-4 min-h-screen mb-20 lg:px-0 px-6 pb-20'>
-      <div className="">
-        <h1 className="font-[600] text-center lg:text-[32px] text-[24px]">
+      <div className="" data-aos="fade-up" data-aos-duration="800">
+        <h1 className="font-[600] text-center lg:text-[32px] text-[24px]" >
           Kenali {''}
           <span className="relative inline-block">
             masalahnya
@@ -41,17 +41,17 @@ export default function Impact() {
         </h1>
       </div>
       <div className="mt-16 font-poppins">
-        <h1 className='lg:text-[24px] text-[18px] w-fit mx-auto z-20 relative font-[600] text-white lg:px-18 px-12 py-2 rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>DAMPAK</h1>
+        <h1 className='lg:text-[24px] text-[18px] w-fit mx-auto z-20 relative font-[600] text-white lg:px-18 px-12 py-2 rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]' data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">DAMPAK</h1>
         <div className="flex flex-col gap-4 -mt-2 items-start lg:px-0 lg:w-auto w-[320px] lg:overflow-x-visible overflow-x-auto">
            <div className="flex justify-center items-start">
-             <div style={{ backgroundImage: `url(${vector1.src})` }} className="flex relative -mr-10 justify-start items-center gap-4 object-cover w-[650px] bg-center bg-cover min-h-[210px]">
+             <div style={{ backgroundImage: `url(${vector1.src})` }} className="flex relative -mr-10 justify-start items-center gap-4 object-cover w-[650px] bg-center bg-cover min-h-[210px]" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
                <div className="-mt-16 flex flex-col items-center gap-2 ml-10 w-[340px]">
                  <p className='text-[20px] font-[500]'>Suhu bumi meningkat</p>
                  <p className='text-justify text-[14px]'>Perubahan iklim membuat suhu global naik, memicu gelombang panas, kekeringan ekstrem, dan kebakaran hutan lebih sering.</p>
                </div>
                <Image src={img1} width={200} height={200} alt='impact1' className='w-[200px] absolute right-14'/>
              </div>
-             <div style={{ backgroundImage: `url(${vector2.src})` }} className="flex relative -ml-10 justify-start items-center gap-4 object-cover w-[650px] bg-center bg-cover min-h-[280px]">
+             <div style={{ backgroundImage: `url(${vector2.src})` }} className="flex relative -ml-10 justify-start items-center gap-4 object-cover w-[650px] bg-center bg-cover min-h-[280px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                <div className="-mt-8 flex flex-col items-center gap-2 ml-30 w-[320px]">
                  <p className='text-[20px] font-[500]'>Banjir & Longsor Sering Terjadi</p>
                  <p className='text-justify text-[14px]'>Penebangan pohon memperparah erosi tanah. Air hujan nggak lagi diserap dengan baik, akibatnya banjir bandang & longsor jadi lebih sering.</p>
@@ -60,14 +60,14 @@ export default function Impact() {
              </div>
            </div>
            <div className="flex justify-center gap-14 items-start -mt-10">
-             <div style={{ backgroundImage: `url(${vector3.src})` }} className="flex relative -mr-0 -mt-22 justify-end items-center gap-4 object-cover w-[620px] bg-center bg-cover min-h-[280px]">
+             <div style={{ backgroundImage: `url(${vector3.src})` }} className="flex relative -mr-0 -mt-22 justify-end items-center gap-4 object-cover w-[620px] bg-center bg-cover min-h-[280px]" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
                <Image src={img3} width={200} height={200} alt='impact1' className='w-[200px] absolute left-0 top-4'/>
                <div className="flex flex-col items-center gap-2 mr-10 w-[380px]">
                  <p className='text-[20px] font-[500]'>Habitat Satwa Punah</p>
                  <p className='text-justify text-[14px]'>Deforestasi menghancurkan rumah alami hewan. Banyak spesies kehilangan tempat tinggal, kesulitan mencari makan, bahkan terancam punah.</p>
                </div>
              </div>
-             <div style={{ backgroundImage: `url(${vector4.src})` }} className="flex relative -ml-0 justify-end items-center gap-4 object-cover w-[540px] bg-center bg-cover min-h-[280px]">
+             <div style={{ backgroundImage: `url(${vector4.src})` }} className="flex relative -ml-0 justify-end items-center gap-4 object-cover w-[540px] bg-center bg-cover min-h-[280px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
                <Image src={img4} width={200} height={200} alt='impact1' className='w-[180px] absolute -left-10 top-0'/>
                <div className="-mt-2 flex flex-col items-center gap-2 mr-16">
                  <p className='text-[20px] font-[500]'>Siklus Air Terganggu</p>
@@ -76,14 +76,14 @@ export default function Impact() {
              </div>
            </div>
            <div className="flex justify-center gap-2 items-start -mt-18">
-             <div style={{ backgroundImage: `url(${vector5.src})` }} className="flex relative -mr-0 justify-start -mt-20 items-center gap-4 object-cover w-[560px] bg-center bg-cover min-h-[280px]">
+             <div style={{ backgroundImage: `url(${vector5.src})` }} className="flex relative -mr-0 justify-start -mt-20 items-center gap-4 object-cover w-[560px] bg-center bg-cover min-h-[280px]" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
                <div className="mt-6 flex flex-col items-center gap-2 ml-10 w-[280px]">
                  <p className='text-[20px] font-[500]'>Kualitas Udara Memburuk</p>
                  <p className='text-justify text-[14px]'>Tanpa pohon, polusi udara sulit disaring. CO₂ meningkat, debu & polutan makin bebas beterbangan, risiko penyakit pernapasan naik.</p>
                </div>
                <Image src={img5} width={200} height={200} alt='impact1' className='w-[200px] absolute right-14 bottom-0'/>
              </div>
-             <div style={{ backgroundImage: `url(${vector6.src})` }} className="flex relative -ml-6 justify-end items-center gap-4 object-cover w-[670px] bg-center bg-cover min-h-[200px]">
+             <div style={{ backgroundImage: `url(${vector6.src})` }} className="flex relative -ml-6 justify-end items-center gap-4 object-cover w-[670px] bg-center bg-cover min-h-[200px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
                <Image src={img6} width={200} height={200} alt='impact1' className='w-[140px] absolute left-6 -bottom-4'/>
                <div className="mt-10 flex flex-col items-center gap-2 mr-16 w-[420px]">
                  <p className='text-[20px] font-[500]'>Gangguan Kehidupan Masyarakat Lokal</p>

@@ -33,8 +33,8 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex lg:justify-center justify-between lg:px-0 px-8 items-center font-poppins text-black lg:h-[14vh] h-[12vh] lg:gap-90 gap-0 fixed w-full bg-white z-30">
-      <h1 className='font-[600] lg:text-[26px] text-[24px]'>Jejak Bumi</h1>
+    <div className="flex lg:justify-center justify-between lg:px-0 px-8 items-center font-poppins text-black lg:h-[14vh] h-[12vh] lg:gap-100 gap-0 fixed w-full bg-white z-30">
+      <h1 className='font-[600] lg:text-[26px] text-[24px]'>Greenly</h1>
       <div className={`flex lg:flex-row flex-col bg-white lg:w-auto w-[200px] text-[16px] lg:h-auto h-[100vh] top-0 justify-center items-center gap-8 lg:text-[18px] font-[500] duration-700 lg:relative absolute ${isOpenNav ? 'right-0' : '-right-[300px]'}`}>
         <a href="#" className="relative before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-[linear-gradient(90deg,#98CD00_18%,#B6F500_80%)] hover:before:w-full before:transition-all before:duration-300">Beranda</a>
         <a href="#" className="relative before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-[linear-gradient(90deg,#98CD00_18%,#B6F500_80%)] hover:before:w-full before:transition-all before:duration-300">Fakta</a>

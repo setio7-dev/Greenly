@@ -49,7 +49,7 @@ const CategoryData = [
 
 export default function Category() {
   return (
-    <div className='w-full container mx-auto px-4 font-poppins pb-26'>
+    <div className='w-full container mx-auto px-4 font-poppins pb-26' data-aos="fade-up" data-aos-duration="800">
       <h1 className='text-[#00AD03] lg:text-[36px] text-[28px] lg:w-full w-[300px] mx-auto font-[600] text-center mb-14'>Pilih Kategori Lingkungan!</h1>
       
       <Swiper

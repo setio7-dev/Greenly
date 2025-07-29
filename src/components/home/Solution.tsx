@@ -13,7 +13,7 @@ import 'swiper/css/effect-cards'
 export default function Solution() {
   return (
     <div className='w-full container mx-auto font-poppins pb-24 px-6 lg:px-16 flex justify-between items-center gap-8 flex-col lg:flex-row'>
-      <div className="flex flex-col gap-4 w-[300px] lg:w-[600px]">
+      <div className="flex flex-col gap-4 w-[300px] lg:w-[600px]" data-aos="fade-right" data-aos-duration="800">
         <h1 className='text-[#00AD03] font-[600] lg:text-[38px] text-[24px] leading-tight lg:w-[400px] w-auto'>
           Solusi Pencegahan Emisi Karbon
         </h1>
@@ -28,6 +28,7 @@ export default function Solution() {
         modules={[Navigation, EffectCards]}
         navigation
         className='w-full max-w-[400px] ml-auto'
+        data-aos="fade-left" data-aos-duration="800"
       >
         <SwiperSlide className='flex justify-center items-center'>
           <Image src={solution1} alt='solution1' width={400} height={400} className="rounded-xl " />

@@ -110,9 +110,9 @@ export default function Article() {
   return (
     <div className='pb-20 font-poppins'>
       <div className="container mx-auto px-6 lg:px-16">
-        <h1 className='lg:text-[36px] text-[24px] font-[600]'>Artikel Populer</h1>
+        <h1 className='lg:text-[36px] text-[24px] font-[600]' data-aos="fade-right" data-aos-duration="800">Artikel Populer</h1>
         <div className="mt-8 flex lg:flex-row flex-col justify-center items-center lg:gap-12 gap-10">
-          <a target='_blank' href='https://indonesia.go.id/kategori/editorial/8789/butuh-dukungan-kolektif-turunkan-emisi-karbon?lang=1' className="flex flex-col gap-1 lg:w-[600px] w-full">
+          <a target='_blank' href='https://indonesia.go.id/kategori/editorial/8789/butuh-dukungan-kolektif-turunkan-emisi-karbon?lang=1' className="flex flex-col gap-1 lg:w-[600px] w-full" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
             <Image className='lg:w-[600px] w-ful mb-4 h-auto' src={popular1.src} width={600} height={600} alt='popular1'/>
             <p className='font-[400] lg:text-[16px] text-[14px] text-[#7A7A7A]'>Selasa, 26 November 2025</p>
             <h1 className='font-[600] lg:text-[28px] text-[20px]'>Butuh Dukungan Kolektif Turunkan Emisi Karbon.</h1>
@@ -120,7 +120,7 @@ export default function Article() {
           </a>
           <div className="flex flex-col lg:gap-4 gap-8">
             {childrenPopular.map((item) => (
-              <a href={item.link} target='_blank' key={item.id} className="flex justify-center items-start gap-6">
+              <a href={item.link} target='_blank' key={item.id} className="flex justify-center items-start gap-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <Image className='lg:w-[196px] w-[120px] lg:h-[196px] h-[150px] object-cover rounded-2xl' src={item.image} width={300} height={300} alt='image'/>
                 <div className="flex flex-col gap-2 lg:w-[320px] w-[180px]">
                   <p className='font-[400] lg:text-[14px] text-[12px] text-[#7A7A7A]'>{item.date}</p>
@@ -133,10 +133,10 @@ export default function Article() {
         </div>
       </div>
       <div className="container mx-auto px-6 lg:px-16 mt-20">
-        <h1 className='lg:text-[36px] text-[24px] font-[600]'>Artikel Terbaru</h1>
+        <h1 className='lg:text-[36px] text-[24px] font-[600]' data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">Artikel Terbaru</h1>
         <div className="flex flex-wrap justify-center items-center gap-12 mt-8">
           {currentArticles.map((item) => (
-            <a href={item.link} target='_blank' key={item.id} className="flex flex-col gap-1 cursor-pointer w-[350px]">
+            <a href={item.link} target='_blank' key={item.id} className="flex flex-col gap-1 cursor-pointer w-[350px]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
               <Image className='rounded-lg w-[350px] h-auto mb-4' src={item.image} width={350} height={350} alt='image'/>
               <p className='font-[400] text-[16px] text-[#7A7A7A]'>{item.date}</p>
               <h1 className='font-[500] text-[18px]'>{item.title}</h1>

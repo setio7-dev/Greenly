@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
@@ -21,11 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.className} overflow-x-hidden antialiased`}
       >
         {children}
       </body>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
     </html>
   );
 }
