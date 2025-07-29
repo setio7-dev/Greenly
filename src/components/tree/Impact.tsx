@@ -16,33 +16,33 @@ import img6 from '../../../public/image/tree/impact/img6.png'
 
 export default function Impact() {
   return (
-    <div className='flex flex-col items-center font-poppins min-h-screen mb-20 pb-20'>
+    <div className='flex flex-col items-center font-poppins lg:mt-0 -mt-4 min-h-screen mb-20 lg:px-0 px-6 pb-20'>
       <div className="">
-        <h1 className="font-[600] text-center text-[32px]">
+        <h1 className="font-[600] text-center lg:text-[32px] text-[24px]">
           Kenali {''}
           <span className="relative inline-block">
             masalahnya
-            <span className="absolute left-0 bottom-[1px] w-full h-[20px] -z-10 bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[16px] -z-10 bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
           </span>
           {' '} ambil {' '}
           <span className="relative inline-block">
             langkah
-            <span className="absolute left-0 bottom-[1px] w-full h-[20px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[16px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
           </span>
           {' '} kecilnya
         </h1>
-        <h1 className="font-[600] text-center text-[32px]">
+        <h1 className="font-[600] display-none-block text-center lg:text-[32px] text-[24px] lg:mt-0 mt-4">
           Rasakan {''}
           <span className="relative inline-block">
             dampak
-            <span className="absolute left-0 bottom-[1px] w-full h-[20px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[16px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
           </span>
           {' '} besarnya {' '}
         </h1>
       </div>
       <div className="mt-16 font-poppins">
-        <h1 className='text-[24px] w-fit mx-auto z-20 relative font-[600] text-white px-18 py-2 rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>DAMPAK</h1>
-        <div className="flex flex-col gap-4 -mt-2 items-center">
+        <h1 className='lg:text-[24px] text-[18px] w-fit mx-auto z-20 relative font-[600] text-white lg:px-18 px-12 py-2 rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>DAMPAK</h1>
+        <div className="flex flex-col gap-4 -mt-2 items-start lg:px-0 lg:w-auto w-[320px] lg:overflow-x-visible overflow-x-auto">
            <div className="flex justify-center items-start">
              <div style={{ backgroundImage: `url(${vector1.src})` }} className="flex relative -mr-10 justify-start items-center gap-4 object-cover w-[650px] bg-center bg-cover min-h-[210px]">
                <div className="-mt-16 flex flex-col items-center gap-2 ml-10 w-[340px]">

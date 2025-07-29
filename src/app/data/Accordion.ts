@@ -29,7 +29,7 @@ export const HomeAccordion = [
 export const TreeAccordion = [
     {
         id: 1,
-        title: "Tanam Pohon Minimal Setahun Sekali",
+        title: "Tanam Pohon Setahun Sekali",
         description: "Satu pohon di halaman rumah sudah sangat berarti. Pohon membantu menyerap karbon, menghasilkan oksigen, menjaga kesejukan udara, hingga menahan air hujan agar tidak langsung mengikis tanah. Kalau menanam sendiri sulit, banyak komunitas tanam pohon yang bisa kamu ikuti. "
     },
     {
@@ -39,7 +39,7 @@ export const TreeAccordion = [
     },
     {
         id: 3,
-        title: "Pilih Produk Ramah Lingkungan",
+        title: "Produk Ramah Lingkungan",
         description: "Saat belanja, coba perhatikan kemasannya. Apakah plastik sekali pakai? Bisa di-reuse? Atau malah berbahaya buat lingkungan? Memilih produk lokal dan barang berkualitas yang awet juga membantu mengurangi limbah. Jangan lupa bawa tas belanja sendiri biar nggak nambah kantong plastik baru."
     },
     {
@@ -49,7 +49,7 @@ export const TreeAccordion = [
     },
     {
         id: 5,
-        title: "Gunakan Transportasi Ramah Lingkungan",
+        title: "Transportasi Ramah",
         description: "Kendaraan bermotor memang praktis, tapi asapnya menambah polusi udara dan emisi karbon. Kalau jarak dekat, kenapa nggak jalan kaki atau bersepeda? Selain hemat ongkos, tubuh juga jadi lebih sehat. Kalau jauh, cobalah naik angkutan umum. Satu kendaraan bersama-sama tentu lebih hemat energi daripada satu kendaraan untuk satu orang."
     },
 ]

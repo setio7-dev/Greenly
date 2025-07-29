@@ -33,6 +33,10 @@ body {
   display: flex;
 }
 
+.display-none-block {
+  display: block;
+}
+
 .display-flex {
   display: none;
 }
@@ -50,7 +54,8 @@ body {
     display: block;
   }
 
-  .display-none {
+  .display-none,
+  .display-none-block {
     display: none;
   }
 }
