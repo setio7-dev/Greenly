@@ -25,27 +25,35 @@ export default function Impact() {
   return (
     <div className="h-auto pb-20 font-poppins text-white">
         <div className='flex lg:flex-row flex-col justify-center items-center lg:gap-12 gap-8 lg:px-0 px-4'>
-          <div className="lg:w-[500px] w-full lg:h-[530px] h-[420px] bg-[linear-gradient(150deg,_#BDFF00_0%,_#00AD03_80%)] rounded-md py-18 lg:px-14 px-8" data-aos="fade-up" data-aos-duration="800">
-            <p className='text-[24px]'>Namun,</p>
-            <p className='font-[600] text-[30px] lg:w-[270px] w-full'>Mengapa Polusi Udara Indonesia Sangat Tinggi?</p>
+          <div className="" data-aos="fade-up" data-aos-duration="800">
+            <div className="lg:w-[500px] transition-all duration-200 hover:scale-105 w-full lg:h-[530px] h-[420px] bg-[linear-gradient(150deg,_#BDFF00_0%,_#00AD03_80%)] rounded-md py-18 lg:px-14 px-8">
+              <p className='text-[24px]'>Namun,</p>
+              <p className='font-[600] text-[30px] lg:w-[270px] w-full'>Mengapa Polusi Udara Indonesia Sangat Tinggi?</p>
+            </div>
           </div>
           <div className="flex flex-col gap-6">
             <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-12 gap-8">
-                <div className="lg:w-[280px] w-full h-[400px] bg-[linear-gradient(150deg,_#BDFF00_0%,_#00AD03_80%)] rounded-md px-10 flex flex-col justify-center items-start gap-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <p className='text-[18px]'>Penyebab utama polusi udara yaitu</p>
-                    <p className='text-[54px] leading-14 font-[700]'>EMISI GAS</p>
-                    <p className='text-[18px]'>dari sektor <br /><span className='font-[600]'>transportasi</span></p>
+                <div className="" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                  <div className="lg:w-[280px] transition-all duration-200 hover:scale-105 w-full h-[400px] bg-[linear-gradient(150deg,_#BDFF00_0%,_#00AD03_80%)] rounded-md px-10 flex flex-col justify-center items-start gap-4">
+                      <p className='text-[18px]'>Penyebab utama polusi udara yaitu</p>
+                      <p className='text-[54px] leading-14 font-[700]'>EMISI GAS</p>
+                      <p className='text-[18px]'>dari sektor <br /><span className='font-[600]'>transportasi</span></p>
+                  </div>
                 </div>
-                <div className="lg:w-[280px] w-full h-[400px] bg-[linear-gradient(150deg,_#BDFF00_0%,_#00AD03_80%)] rounded-md px-10 flex flex-col justify-center items-start gap-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <p className='text-[18px]'>Sektor pendukung polusi udara yaitu</p>
-                    <p className='text-[38px] leading-10 my-3 font-[700]'><span className='text-[28px]'>PEMBAKARAN</span> SAMPAH</p>
-                    <p className='text-[18px]'>dari emisi <br /><span className='font-[600]'>rumah tangga</span></p>
+                <div className="" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                  <div className="lg:w-[280px] transition-all duration-200 hover:scale-105 w-full h-[400px] bg-[linear-gradient(150deg,_#BDFF00_0%,_#00AD03_80%)] rounded-md px-10 flex flex-col justify-center items-start gap-4">
+                      <p className='text-[18px]'>Sektor pendukung polusi udara yaitu</p>
+                      <p className='text-[38px] leading-10 my-3 font-[700]'><span className='text-[28px]'>PEMBAKARAN</span> SAMPAH</p>
+                      <p className='text-[18px]'>dari emisi <br /><span className='font-[600]'>rumah tangga</span></p>
+                  </div>
                 </div>
             </div>
-            <div className="p-[4px] h-auto lg:w-full w-[80vw] mx-auto rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_80%)]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
-              <div className="bg-white lg:h-[100px] h-[70px] rounded-xl py-4 lg:px-10 px-6 relative flex flex-col justify-center items-start">
-                <p className='text-transparent bg-clip-text bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_51%)] font-poppins font-[600] text-[18px] lg:text-[30px]'>Cari tau lebih lanjut</p>
-                <Image src={go} width={100} height={100} alt='go' className='lg:w-[36px] lg:h-[36px] w-[26px] h-[26px] absolute bottom-4 right-4 cursor-pointer'/>
+            <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+              <div className="p-[4px] cursor-pointer h-auto lg:w-full w-[80vw] mx-auto rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_80%)] group hover:scale-105 duration-200" >
+                <div className="bg-white lg:h-[100px] h-[70px] rounded-xl py-4 lg:px-10 px-6 relative flex flex-col justify-center items-start">
+                  <p className='text-transparent bg-clip-text bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_51%)] font-poppins font-[600] text-[18px] lg:text-[30px]'>Cari tau lebih lanjut</p>
+                  <Image src={go} width={100} height={100} alt='go' className='lg:w-[36px] lg:h-[36px] w-[26px] group-hover:rotate-45 duration-200 h-[26px] absolute bottom-4 right-4 cursor-pointer'/>
+                </div>
               </div>
             </div>
           </div>
