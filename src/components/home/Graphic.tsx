@@ -98,6 +98,7 @@ export default function Graphic() {
 
   const chartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
@@ -117,12 +118,17 @@ export default function Graphic() {
   }
 
   return (
-    <div className='container w-full mx-auto font-poppins pb-20 px-4 sm:px-6 lg:px-16'>
-      <h1 className='text-[32px] font-[500] w-full md:w-[400px]'>Presentase Data Dalam Bentuk Presentase</h1>
+    <div className='container w-full mx-auto font-poppins pb-20 px-6 lg:px-16'>
+      <h1 className='lg:text-[32px] text-[24px] font-[500] w-full md:w-[400px]'>
+        Presentase Data Dalam Bentuk Presentase
+      </h1>
 
-      <div className="my-10">
+      <div className="my-10 lg:min-h-[400px] w-full h-[300px]">
         {labels.length > 0 ? (
-          <Line data={chartData} options={chartOptions} />
+          <Line
+            data={chartData}
+            options={chartOptions}
+          />
         ) : (
           <p className='text-gray-500'>Silakan pilih kategori terlebih dahulu</p>
         )}
@@ -133,11 +139,11 @@ export default function Graphic() {
           <div
             onClick={() => setCategory(item.slug)}
             key={item.id}
-            className={`border-2 border-[#00AD03] py-4 px-6 rounded-lg transition-opacity ${
+            className={`border-2 border-[#00AD03] lg:py-4 py-2 lg:px-6 px-4 rounded-lg transition-opacity ${
               category === item.slug ? 'opacity-100' : 'opacity-60'
             } hover:opacity-100`}
           >
-            <p className='font-[600] text-[20px] text-[#00AD03]'>{item.category}</p>
+            <p className='font-[600] text-[12px] lg:text-[20px] text-[#00AD03]'>{item.category}</p>
           </div>
         ))}
       </div>

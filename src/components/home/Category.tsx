@@ -50,14 +50,14 @@ const CategoryData = [
 export default function Category() {
   return (
     <div className='w-full container mx-auto px-4 font-poppins pb-26'>
-      <h1 className='text-[#00AD03] text-[36px] font-[600] text-center mb-14'>Pilih Kategori Lingkungan!</h1>
+      <h1 className='text-[#00AD03] lg:text-[36px] text-[28px] lg:w-full w-[300px] mx-auto font-[600] text-center mb-14'>Pilih Kategori Lingkungan!</h1>
       
       <Swiper
         modules={[Navigation, Pagination, EffectCoverflow]}
         effect='coverflow'
         centeredSlides={true}
         grabCursor={true}
-        slidesPerView={2.5}
+        slidesPerView={3}
         navigation
         pagination={{ clickable: true }}
         coverflowEffect={{
@@ -67,10 +67,26 @@ export default function Category() {
           modifier: 2.5,
           slideShadows: false,
         }}
+        breakpoints={{
+        0: {
+          slidesPerView: 1.1,
+          centeredSlides: true,
+        },
+        640: {
+          slidesPerView: 1.5,
+          centeredSlides: true,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
       >
         {CategoryData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] w-[360px] min-h-[460px] rounded-lg px-6 py-10 flex flex-col items-start justify-center text-center shadow-md mx-auto">
+            <div className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] lg:w-[360px] w-full min-h-[460px] rounded-lg px-6 py-10 flex flex-col items-start justify-center text-center shadow-md mx-auto">
               <Image src={item.image} alt='image' width={item.width} height={160} className="mb-4 mx-auto"/>
               <h1 className="text-white text-[28px] font-[600]">{item.title}</h1>
               <p className="text-white text-sm mt-2 text-[12px] text-justify">{item.desc}</p>

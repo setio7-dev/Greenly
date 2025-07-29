@@ -12,12 +12,12 @@ import 'swiper/css/effect-cards'
 
 export default function Solution() {
   return (
-    <div className='w-full container mx-auto font-poppins pb-24 px-4 sm:px-6 lg:px-16 flex justify-between items-center gap-8 flex-col lg:flex-row'>
-      <div className="flex flex-col gap-4 w-full lg:w-[600px]">
-        <h1 className='text-[#00AD03] font-[600] text-[38px] leading-tight'>
-          Solusi Pencegahan <br /> Emisi Karbon
+    <div className='w-full container mx-auto font-poppins pb-24 px-6 lg:px-16 flex justify-between items-center gap-8 flex-col lg:flex-row'>
+      <div className="flex flex-col gap-4 w-[300px] lg:w-[600px]">
+        <h1 className='text-[#00AD03] font-[600] lg:text-[38px] text-[24px] leading-tight lg:w-[400px] w-auto'>
+          Solusi Pencegahan Emisi Karbon
         </h1>
-        <p className='text-[16px] text-justify'>
+        <p className='lg:text-[16px] text-[14px] text-justify'>
           Dengan adanya emisi karbon di Indonesia yang berdampak cukup signifikan, kami memberikan beberapa solusi untuk mencapai tujuan kami yaitu meminimalisir jejak karbon: langkah mudah gaya hidup berkelanjutan. Mari mulailah jejak perjalanan yang ramah lingkungan dengan berkontribusi yang baik.
         </p>
       </div>
@@ -30,13 +30,13 @@ export default function Solution() {
         className='w-full max-w-[400px] ml-auto'
       >
         <SwiperSlide className='flex justify-center items-center'>
-          <Image src={solution1} alt='solution1' width={400} height={400} className="rounded-xl" />
+          <Image src={solution1} alt='solution1' width={400} height={400} className="rounded-xl " />
         </SwiperSlide>
         <SwiperSlide className='flex justify-center items-center'>
-          <Image src={solution2} alt='solution2' width={400} height={400} className="rounded-xl" />
+          <Image src={solution2} alt='solution2' width={400} height={400} className="rounded-xl " />
         </SwiperSlide>
         <SwiperSlide className='flex justify-center items-center'>
-          <Image src={solution3} alt='solution3' width={400} height={400} className="rounded-xl" />
+          <Image src={solution3} alt='solution3' width={400} height={400} className="rounded-xl " />
         </SwiperSlide>
       </Swiper>
     </div>
