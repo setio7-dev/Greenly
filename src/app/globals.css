@@ -83,13 +83,16 @@ body {
   }
 }
 
-/* Green */
 /* background color */
+/* Green */
 /* bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] */
 
 /* Water Blue */
 /* bg-[radial-gradient(circle,_rgba(0,151,220,1)_0%,_rgba(110,199,240,1)_100%)] */
 /* bg-[radial-gradient(circle,_rgba(110,199,240,1)_0%,_rgba(0,151,220,1)_100%)] */
+
+/* Dirt */
+/* bg-[radial-gradient(circle,_#810000_0%,_#5C0000_100%)] */
 
 /* text color */
 /* text-transparent bg-clip-text bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] */

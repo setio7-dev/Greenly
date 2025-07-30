@@ -38,7 +38,7 @@ export default function Community() {
           {CommunityData.map((item) => (
             <div className="bg-[#D9D9D9] lg:w-[240px] w-[300px] h-[300px] pb-6 flex flex-col justify-center gap-2 items-center rounded-md" key={item.id} data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
               <Image width={180} height={180} alt="image" className='w-[200px] h-auto' src={item.img} />
-              <button className='bg-[#AEA46B] text-white px-10 py-2 cursor-pointer rounded-lg text-[16px]'>Bergabung</button>
+              <button className='bg-[radial-gradient(circle,_rgba(0,151,220,1)_0%,_rgba(110,199,240,1)_100%)] text-white px-10 py-2 cursor-pointer rounded-lg text-[16px]'>Bergabung</button>
             </div>
           ))}
         </div>

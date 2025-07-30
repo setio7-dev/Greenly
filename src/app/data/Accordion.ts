@@ -81,3 +81,31 @@ export const WaterAccordion = [
         description: "Cairan seperti minyak goreng bekas, oli, cairan pembersih, cat, atau obat-obatan jangan dibuang ke saluran air. Limbah ini bisa mencemari air tanah dan meracuni makhluk hidup. Sebaiknya simpan dan bawa ke tempat penampungan limbah berbahaya atau bank sampah khusus."
     },
 ]
+
+export const DirtAccordion = [
+    {
+        id: 1,
+        title: "Pisahkan Sampah Organik & Anorganik",
+        description: "Memilah sampah membantu mencegah pencemaran tanah oleh limbah anorganik seperti plastik dan logam. Sampah organik bisa diolah, sedangkan anorganik bisa didaur ulang. Langkah kecil ini jadi awal perlindungan tanah yang besar."
+    },
+    {
+        id: 2,
+        title: "Komposkan Sisa Makanan di Rumah",
+        description: "Sisa makanan jangan dibuang begitu saja—ubah jadi kompos. Kompos memperbaiki struktur tanah dan menghidupkan mikroorganisme baik. Ini cara sederhana untuk mengembalikan kesuburan tanah secara alami. Kamu bisa mulai dari ember kecil di dapur atau halaman rumah."
+    },
+    {
+        id: 3,
+        title: "Gunakan Pupuk Organik",
+        description: "Pupuk kimia yang berlebihan bisa merusak tanah dalam jangka panjang. Sebaliknya, pupuk organik menjaga keseimbangan tanah dan lebih ramah lingkungan. Pilih yang alami untuk hasil yang berkelanjutan. Banyak pupuk organik juga bisa dibuat sendiri dari sisa dapur."
+    },
+    {
+        id: 4,
+        title: "Hindari Membuang Limbah B3 ke Tanah",
+        description: "Limbah berbahaya seperti baterai, oli, dan cat bisa merusak tanah dan mencemari air tanah. Buanglah limbah B3 ke tempat penanganan khusus. Jangan biarkan tanah jadi korban limbah rumah tangga. Edukasi orang sekitar agar tidak sembarangan membuang limbah beracun."
+    },
+    {
+        id: 5,
+        title: "Edukasi & Ajak Orang Sekitar",
+        description: "Perubahan besar dimulai dari kesadaran bersama. Ajak keluarga dan teman untuk mulai memilah sampah atau membuat kompos. Satu rumah peduli bisa menginspirasi banyak lainnya. Semakin banyak yang bergerak, semakin besar dampak untuk bumi."
+    },
+]
