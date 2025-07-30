@@ -109,3 +109,31 @@ export const DirtAccordion = [
         description: "Perubahan besar dimulai dari kesadaran bersama. Ajak keluarga dan teman untuk mulai memilah sampah atau membuat kompos. Satu rumah peduli bisa menginspirasi banyak lainnya. Semakin banyak yang bergerak, semakin besar dampak untuk bumi."
     },
 ]
+
+export const AirAccordion = [
+    {
+        id: 1,
+        title: "Gunakan Transportasi Ramah Lingkungan",
+        description: "Kendaraan bermotor adalah salah satu penyumbang terbesar emisi gas buang. Dengan memilih berjalan kaki, bersepeda, atau naik transportasi umum, kita bisa mengurangi jumlah kendaraan di jalan dan menurunkan tingkat polusi udara secara signifikan."
+    },
+    {
+        id: 2,
+        title: "Tanam Tanaman Penyaring Udara",
+        description: "Tanaman seperti lidah mertua, palem kuning, dan sirih gading dapat menyerap karbon dioksida dan racun udara lainnya. Menanam tanaman ini di sekitar rumah atau kantor membantu meningkatkan kualitas udara yang kita hirup setiap hari."
+    },
+    {
+        id: 3,
+        title: "Hemat Energi di Rumah",
+        description: "Mengurangi penggunaan listrik berarti mengurangi kebutuhan pembangkit energi, terutama yang berbahan bakar fosil. Matikan peralatan listrik saat tidak digunakan, gunakan lampu hemat energi, dan pertimbangkan energi terbarukan jika memungkinkan."
+    },
+    {
+        id: 4,
+        title: "Kurangi atau Hindari Merokok",
+        description: "Asap rokok mengandung lebih dari 7.000 bahan kimia, banyak di antaranya berbahaya bagi perokok maupun orang di sekitarnya. Mengurangi atau berhenti merokok berarti mengurangi sumber polusi udara dalam skala kecil namun signifikan."
+    },
+    {
+        id: 5,
+        title: "Dukung Kebijakan Lingkungan",
+        description: "Pemerintah punya peran besar dalam mengatur emisi industri dan kendaraan. Kita bisa berkontribusi dengan mendukung program-program pemerintah, menandatangani petisi, atau memilih pemimpin yang peduli pada isu lingkungan."
+    },
+]
