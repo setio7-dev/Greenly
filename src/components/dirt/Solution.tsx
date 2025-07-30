@@ -13,7 +13,7 @@ export default function Solution() {
     };
 
   return (
-    <div className='font-poppins min-h-screen flex flex-col items-center pb-28 lg:px-0 px-6 lg:mt-0 -mt-26'>
+    <div className='font-poppins min-h-screen flex flex-col items-center pb-28 lg:px-0 px-6 lg:mt-0 -mt-26' id='aksi'>
       <div className="flex lg:flex-row flex-col-reverse justify-center items-center lg:gap-64 gap-6">
         <p className='lg:w-[620px] w-full lg:text-[16px] text-[12px] text-justify' data-aos="fade-right" data-aos-duration="800">Kita sering dengar bahwa krisis tanah bukan lagi ancaman masa depan — tapi sedang terjadi saat ini. Tanah kehilangan kesuburannya, tercemar sampah dan bahan kimia, dan tak lagi mampu menumbuhkan pangan seperti dulu. Tapi, kita masih punya harapan. Lewat langkah kecil dalam kehidupan sehari-hari, kita bisa bantu pulihkan dan lindungi tanah. Mulai dari cara kita mengelola sampah, memilih pupuk, hingga mengompos sisa makanan — semua itu punya dampak besar untuk masa depan yang lebih subur.</p>
         <h1 className='text-transparent bg-clip-text bg-[#5C0000] font-[800] text-[26px] lg:text-[42px] text-shadow-xl text-center lg:text-right' data-aos="fade-left" data-aos-duration="800">AKSI KECIL, <br /> DAMPAK BESAR</h1>

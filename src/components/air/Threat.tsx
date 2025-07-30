@@ -20,7 +20,7 @@ export default function Threat() {
   }
 
   return (
-    <div className='flex justify-center lg:flex-row flex-col items-center gap-16 lg:mt-0 -mt-60 font-poppins min-h-auto mb-28'>
+    <div className='flex justify-center lg:flex-row flex-col items-center gap-16 lg:mt-0 -mt-60 font-poppins min-h-auto mb-28' id='ancaman'>
       <h1 className='lg:text-[42px] text-[30px] lg:text-start text-center font-[700] text-transparent bg-clip-text bg-[radial-gradient(circle,_#6BB3F6_0%,_#7597B8_100%)]' data-aos="fade-right" data-aos-duration="800">ANCAMAN <br /> PENCEMARAN</h1>
       <div className="flex lg:mt-0 -mt-6 lg:flex-row flex-col justify-center items-center gap-12 cursor-pointer">
         <div data-aos="fade-up" data-aos-duration="800">

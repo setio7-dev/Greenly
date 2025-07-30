@@ -13,7 +13,7 @@ export default function Solution() {
     };
 
   return (
-    <div className='font-poppins min-h-screen flex flex-col items-center pb-28 lg:px-0 px-6 lg:mt-0 -mt-26'>
+    <div className='font-poppins min-h-screen flex flex-col items-center pb-28 lg:px-0 px-6 lg:mt-0 -mt-26' id='aksi'>
       <div className="flex lg:flex-row flex-col-reverse justify-center items-center lg:gap-64 gap-6">
         <p className='lg:w-[620px] w-full lg:text-[16px] text-[12px] text-justify' data-aos="fade-right" data-aos-duration="800">Kita sering mendengar bahwa bumi sedang tidak baik-baik saja. Suhu global naik, hutan hilang, banjir makin sering datang, dan habitat satwa perlahan lenyap. Tapi kabar baiknya: kita masih bisa berbuat sesuatu, mulai dari hal paling sederhana di sekitar kita. Beberapa langkah kecil yang bisa kamu lakukan untuk membantu bumi tetap sehat — dan kabar baiknya, semua bisa dimulai sekarang juga!</p>
         <h1 className='text-transparent bg-clip-text bg-[linear-gradient(160deg,_#BDFF00_0%,_#00AD03_81%)] font-[800] text-[26px] lg:text-[42px] text-shadow-xl text-center lg:text-right' data-aos="fade-left" data-aos-duration="800">AKSI KECIL, <br /> DAMPAK BESAR</h1>

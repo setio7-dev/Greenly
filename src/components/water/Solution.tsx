@@ -13,7 +13,7 @@ export default function Solution() {
     };
 
   return (
-    <div className='font-poppins min-h-screen flex flex-col items-center pb-28 lg:px-0 px-6 lg:mt-0 -mt-26'>
+    <div className='font-poppins min-h-screen flex flex-col items-center pb-28 lg:px-0 px-6 lg:mt-0 -mt-26' id='aksi'>
       <div className="flex lg:flex-row flex-col-reverse justify-center items-center lg:gap-64 gap-6">
         <p className='lg:w-[620px] w-full lg:text-[16px] text-[12px] text-justify' data-aos="fade-right" data-aos-duration="800">Kita sering dengar bahwa krisis air bukan lagi cerita masa depan — tapi sudah terjadi hari ini. Sungai kotor, air tanah tercemar, dan jutaan orang kesulitan akses air bersih. Tapi, kita masih punya harapan. Lewat langkah kecil di kehidupan sehari-hari, kita bisa bantu jaga air tetap bersih dan cukup untuk semua. Mulai dari cara kita mencuci, membuang sampah, sampai memilih produk yang kita pakai — semuanya berdampak.</p>
         <h1 className='text-transparent bg-clip-text bg-[linear-gradient(40deg,_rgba(0,151,220,1)_0%,_rgba(110,199,240,1)_81%)] font-[800] text-[26px] lg:text-[42px] text-shadow-xl text-center lg:text-right' data-aos="fade-left" data-aos-duration="800">AKSI KECIL, <br /> DAMPAK BESAR</h1>

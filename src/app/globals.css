@@ -67,6 +67,21 @@ body {
   }
 }
 
+.link-gradient::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-image: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+.link-gradient:hover::before {
+  width: 100%;
+}
+
 
 @media (min-width: 320px) and (max-width: 767px) {
   .display-flex {

@@ -24,7 +24,7 @@ const CommunityData = [
 
 export default function Community() {
   return (
-    <div className='pb-24 font-poppins'>
+    <div className='pb-24 font-poppins' id='komunitas'>
       <div className="" data-aos="fade-up" data-aos-duration="800">
         <h1 className="font-[600] text-center lg:text-[32px] text-[24px]">
           <span className="relative inline-block">
