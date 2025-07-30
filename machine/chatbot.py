@@ -12,14 +12,14 @@ def get_custom_response(prompt):
     prompt_lower = prompt.lower()
 
     if "who are you" in prompt_lower:
-        return "I'm Natura, your environmental awareness companion. Let's make the planet greener together!"
+        return "I'm <b>Natura</b>, your environmental awareness companion. Let's make the planet greener together!"
     if "siapa kamu" in prompt_lower:
-        return "Saya Natura, teman peduli lingkungan Anda. Mari bersama-sama menjaga bumi kita!"
+        return "Saya <b>Natura</b>, teman peduli lingkungan Anda. Mari bersama-sama menjaga bumi kita!"
     if "kamu siapa" in prompt_lower:
-        return "Saya Natura, asisten yang siap membantu Anda menjaga dan mencintai lingkungan."
+        return "Saya <b>Natura</b>, asisten yang siap membantu Anda menjaga dan mencintai lingkungan."
 
     response = model.generate_content(prompt)
-    return response.text
+    return response.parts[0].text 
 
 @app.route('/chat', methods=['POST'])
 def chat_post():
@@ -32,4 +32,4 @@ def chat_post():
     return jsonify({"response": response_text})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0', port=2002)
