@@ -9,7 +9,7 @@ import Image from 'next/image'
 export default function Welcome() {
   return (
     <div className='flex flex-col items-center justify-start min-h-screen font-poppins lg:my-10 my-6 container lg:pb-0 pb-20 mx-auto'>
-      <div className="w-[95vw] h-[79.5vh] bg-cover flex relative justify-between mt-4 items-center display-none" style={{ backgroundImage: `url(${bgWelcome.src})` }} data-aos="fade-up" data-aos-duration="800">
+      <div className="w-[95vw] h-[84vh] bg-cover flex relative justify-between mt-2 items-center display-none" style={{ backgroundImage: `url(${bgWelcome.src})` }} data-aos="fade-up" data-aos-duration="800">
         <h1 className='font-[700] -mt-30 text-[48px] ml-20 text-white'>Jelajahi Gaya Hidup <br /> Rendah Emisi</h1>
         <Image src={truck.src} className='bounce' width={640} height={640} alt='image'/>
         <Image src={search.src} className='absolute cursor-pointer hover:scale-105 scale-100 duration-300 left-0 bottom-0' width={500} height={200} alt='image'/>
