@@ -42,7 +42,7 @@ export default function Community() {
       <div className="grid place-items-center h-auto pb-20">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 lg:gap-20 mt-16">
           {CommunityData.map((item) => (
-            <div className="bg-[#D9D9D9] lg:w-[240px] w-[300px] h-[300px] flex flex-col justify-center items-center rounded-md" key={item.id} data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <div className="bg-[#D9D9D9] lg:w-[240px] w-[300px] h-[300px] pb-6 flex flex-col justify-center items-center rounded-md" key={item.id} data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
               <Image width={180} height={180} alt="image" className='w-[200px] h-auto' src={item.img} />
               <button className='bg-[#AEA46B] text-white px-10 py-2 cursor-pointer rounded-lg text-[16px]'>Bergabung</button>
             </div>

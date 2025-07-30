@@ -6,7 +6,7 @@ export default function Fact() {
   return (
     <div className='flex flex-col items-center font-poppins min-h-screen mb-20 -mt-12 lg:px-0 px-6'>
       <h1 className="font-[600] lg:text-[32px] text-[24px] lg:text-start text-center" data-aos="fade-up" data-aos-duration="800">
-        Pohon juga memiliki banyak {''}
+        Air juga memiliki banyak {''}
         <span className="relative inline-block">
           fakta unik
           <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-[#6EC7F0] rounded-full"></span>

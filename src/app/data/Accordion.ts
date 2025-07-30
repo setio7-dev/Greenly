@@ -53,3 +53,31 @@ export const TreeAccordion = [
         description: "Kendaraan bermotor memang praktis, tapi asapnya menambah polusi udara dan emisi karbon. Kalau jarak dekat, kenapa nggak jalan kaki atau bersepeda? Selain hemat ongkos, tubuh juga jadi lebih sehat. Kalau jauh, cobalah naik angkutan umum. Satu kendaraan bersama-sama tentu lebih hemat energi daripada satu kendaraan untuk satu orang."
     },
 ]
+
+export const WaterAccordion = [
+    {
+        id: 1,
+        title: "Gunakan Detergen Ramah Lingkungan",
+        description: "Sabun dan deterjen biasa sering mengandung fosfat dan bahan kimia berbahaya yang sulit terurai dan bisa mencemari sungai serta merusak ekosistem air. Pilihlah produk rumah tangga yang berlabel eco-friendly, biodegradable, dan minim kandungan kimia keras."
+    },
+    {
+        id: 2,
+        title: "Kurangi Plastik Sekali Pakai",
+        description: "Sampah plastik seperti kantong kresek, sedotan, dan botol minuman sering berakhir di saluran air atau sungai. Lama-kelamaan, plastik ini akan terurai menjadi mikroplastik dan mencemari air tanah serta laut. Mulailah kebiasaan membawa botol minum sendiri, menggunakan tas belanja kain, dan menghindari kemasan plastik berlebihan."
+    },
+    {
+        id: 3,
+        title: "Buat Resapan dan Penampung Air Hujan",
+        description: "Memanen air hujan bisa jadi solusi cerdas. Kamu bisa membuat sumur resapan, lubang biopori, atau menaruh drum penampung air untuk menyimpan air hujan. Selain bisa dimanfaatkan untuk menyiram tanaman atau mencuci kendaraan, ini juga membantu mengurangi limpasan air hujan yang bisa memicu banjir."
+    },
+    {
+        id: 4,
+        title: "Gunakan Kembali Air yang Masih Bisa Dimanfaatkan",
+        description: "“Grey water” atau air bekas dari cucian beras, sayuran, atau pendingin ruangan bisa dimanfaatkan ulang untuk menyiram tanaman, membersihkan teras, atau menyiram toilet. Dengan sedikit penyesuaian, air yang tidak terpakai ini bisa sangat membantu mengurangi pemborosan."
+    },
+    {
+        id: 5,
+        title: "Jangan Buang Limbah Kimia ke Saluran Air",
+        description: "Cairan seperti minyak goreng bekas, oli, cairan pembersih, cat, atau obat-obatan jangan dibuang ke saluran air. Limbah ini bisa mencemari air tanah dan meracuni makhluk hidup. Sebaiknya simpan dan bawa ke tempat penampungan limbah berbahaya atau bank sampah khusus."
+    },
+]
