@@ -67,21 +67,31 @@ body {
   }
 }
 
-.link-gradient::before {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  height: 3px;
-  width: 0;
-  background-image: var(--gradient);
-  transition: width 0.3s ease;
+.image {
+    display: block;
 }
 
-.link-gradient:hover::before {
-  width: 100%;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+    display: none;
+}
+
+.overflow-y-auto {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
 
 @media (min-width: 320px) and (max-width: 767px) {
   .display-flex {
