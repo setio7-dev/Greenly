@@ -5,6 +5,7 @@ import truck from '../../../public/image/home/truck.png'
 import suggest from '../../../public/image/home/suggest.png'
 import search from '../../../public/image/home/search.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Welcome() {
   return (
@@ -19,7 +20,7 @@ export default function Welcome() {
           <Image src={truck.src} width={300} height={300} className='mx-auto bounce' alt='image'/>
           <h1 className='font-[600] text-[28px] text-center text-[#00AD03]'>Jelajahi Gaya Hidup Rendah Emisi</h1>
         </div>
-        <p className='text-[14px] font-[400] text-justify'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut dignissimos nulla explicabo optio delectus provident quos, laboriosam reiciendis alias, ab numquam, non autem! Corrupti dolorum, nostrum natus aliquam adipisci voluptatum.</p>
+        <p className='text-[14px] font-[400] text-justify'>Temukan cara hidup yang lebih ramah lingkungan dengan mengurangi jejak karbon harianmu. Mulai dari transportasi hingga energi, setiap langkah kecil berarti untuk bumi kita.</p>
         <Image src={search.src} className='mt-6' width={260} height={260} alt='image'/>
       </div>
       <div className="flex lg:flex-row flex-col justify-center items-center lg:pb-16 lg:gap-16 gap-6 lg:mt-20 -mt-6">
@@ -27,7 +28,9 @@ export default function Welcome() {
         <div className="flex flex-col items-start lg:w-[520px] w-[320px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
           <h1 className='lg:text-[32px] text-[24px] font-[600] text-[#00AD03]'>Ayo Cek Emisi Karbon Kamu Sekarang!</h1>
           <p className='lg:text-[14px] text-[12px] font-[400] mt-4 text-justify'>Langkah awal mengurangi karbon dimulai dari menghitung emisi karbon pribadi kita berapa banyak tiap tahunnya. Caranya mudah, tinggal masukin data aktivitas harian mulai dari pilihan transportasi, penggunaan listrik dan peralatan elektronik, serta pilihan menu makan. <br /> <br /> Hasil hitunganya bisa dilihat langsung. Kamu juga bisa bandingin emisi kamu dengan rata-rata orang Indonesia, ASEAN, Global, atau bahkan dengan teman kamu yang juga mencoba kalkulator jejakkarbonku.id</p>
-          <button className='font-[600] border-3 text-[#00AD03] border-[#00AD03] rounded-lg mt-6 px-4 py-3 text-[16px] w-full lg:w-auto hover:scale-105 hover:bg-[#00AD03] hover:text-white duration-300 cursor-pointer'>Mulai Hitung Emisi Karbon Kamu!</button>
+          <Link href='/cek-emisi'>
+            <button className='font-[600] border-3 text-[#00AD03] border-[#00AD03] rounded-lg mt-6 px-4 py-3 text-[16px] w-full lg:w-auto hover:scale-105 hover:bg-[#00AD03] hover:text-white duration-300 cursor-pointer'>Mulai Hitung Emisi Karbon Kamu!</button>
+          </Link>
         </div>
       </div>
     </div>
