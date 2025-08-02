@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import React, { useState } from 'react'
@@ -78,7 +77,7 @@ const transportasiData = [
     },
 ];
 
-export default function page() {
+export default function Page() {
     const [total, setTotal] = useState(0);
     const [filteredEmisiData, setFilteredEmisiData] = useState<any[]>([]);
     const [distance, setDistance] = useState('');

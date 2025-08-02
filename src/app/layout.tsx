@@ -1,13 +1,19 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"]
-});
+})
+
+const pixelify = Pixelify_Sans({
+  variable: "--font-pixelify",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
+})
 
 export const metadata: Metadata = {
   title: "Nature Website",
@@ -21,10 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ scrollBehavior: 'smooth' }}>
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <head> 
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      </head>
       <body
-        className={`${poppins.className} overflow-x-hidden antialiased`}
+        className={`${poppins.variable} ${pixelify.variable} overflow-x-hidden antialiased`}
       >
         {children}
       </body>
