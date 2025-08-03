@@ -21,7 +21,9 @@ export default function Welcome() {
           <h1 className='font-[600] text-[28px] text-center text-[#00AD03]'>Jelajahi Gaya Hidup Rendah Emisi</h1>
         </div>
         <p className='text-[14px] font-[400] text-justify'>Temukan cara hidup yang lebih ramah lingkungan dengan mengurangi jejak karbon harianmu. Mulai dari transportasi hingga energi, setiap langkah kecil berarti untuk bumi kita.</p>
-        <Image src={search.src} className='mt-6' width={260} height={260} alt='image'/>
+        <a href="#">
+          <Image src={search.src} className='mt-6' width={260} height={260} alt='image'/>
+        </a>
       </div>
       <div className="flex lg:flex-row flex-col justify-center items-center lg:pb-16 lg:gap-16 gap-6 lg:mt-20 -mt-6">
         <Image src={suggest} className='lg:w-[550px] w-[280px]' width={550} height={500} alt='suggest' data-aos="fade-right" data-aos-duration="800" data-aos-delay="100"/>
