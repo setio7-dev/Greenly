@@ -10,7 +10,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div>
+    <div className='font-poppins'>
       <Navbar/>
       <Home/>
       <Fact/>

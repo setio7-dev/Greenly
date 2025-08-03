@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 "use client"
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import background from '../../../public/image/kenali/background1.png'
 import life1 from '../../../public/image/kenali/life1.png'
 import life2 from '../../../public/image/kenali/life2.png'
@@ -23,9 +23,11 @@ import img9 from '../../../public/image/kenali/trash/9.png'
 import img10 from '../../../public/image/kenali/trash/10.png'
 import img11 from '../../../public/image/kenali/trash/11.png'
 import img12 from '../../../public/image/kenali/trash/12.png'
+import Loading from '../ui/Loading'
 
 export default function Page() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchCanvas = () => {
@@ -56,17 +58,48 @@ export default function Page() {
             const trashObject12 = document.getElementById('trashObject12');
             const play = document.getElementById('play');
             const playScreen = document.getElementById('playScreen');
+            const countdownScreen = document.getElementById('countdownScreen');
+            const countdown = document.getElementById('countdown');
+            const gameoverScreen = document.getElementById('gameoverScreen');
+            const gameover = document.getElementById("gameover");
+            const playAgain = document.getElementById('playAgain');
+            const close = document.getElementById("close");
             let thisTrashObject = 0;
             let scoreCount = 0;
             let playerLifeCount = 4;
             let isLifeShaking = false;
             let lifeShakeFrame = 0;
             let isGamePlay = false;
+            let playerGameOver = "Kamu Kalah";
+            countdownScreen!.style.display = 'none';
+            gameoverScreen!.style.display = "none";            
+            const backsound = new Audio('/audio/kenali/sound.mp3');
+            backsound.loop = true;
+            
+            play?.addEventListener('click', () => {              
+              backsound.play();
 
-            play?.addEventListener('click', () => {
-              isGamePlay = true;
               playScreen!.style.display = 'none';
+              gameCountdown();
             });
+            
+            function gameCountdown() {
+              countdownScreen!.style.display = 'flex';
+              let countdownTotalCount = 3;
+
+              const audio = new Audio('/audio/kenali/countdown.wav');
+              audio.play();
+              const countdownInterval = setInterval(() => {
+                countdown!.textContent = `${countdownTotalCount}`;
+                countdownTotalCount--;
+
+                if (countdownTotalCount < 0) {
+                  clearInterval(countdownInterval); 
+                  countdownScreen!.style.display = 'none';
+                  isGamePlay = true;
+                }
+              }, 1000);
+            }
 
             const trashProp = {
                 x: (canvas!.width - 180) / 2,
@@ -204,17 +237,42 @@ export default function Page() {
 
                   if (element.type === object.type) {
                     scoreCount += 10;
+                    const audio = new Audio('/audio/kenali/coint.mp3');
+                    audio.play();
                   } else {
+                    const audio = new Audio('/audio/kenali/wrong.wav');
+                    audio.play();
                     playerLifeCount -= 1;
                     isLifeShaking = true;
                     lifeShakeFrame = 0;
                   }
 
+                  checkGameOver();
                   score!.textContent = `Skor: ${scoreCount}`;
                   thisTrashObject += 1;
                   trashObjectProp.y = 0;
                   break;
                 }
+              }
+            }
+
+            function checkGameOver() {
+              if (scoreCount >= 210) {
+                backsound.muted = true;
+                const audio = new Audio('/audio/kenali/success.mp3');
+                audio.play();
+
+                playerGameOver = "Kamu Menang";
+                isGamePlay = false;
+                gameOverPlayer();
+              } else if (playerLifeCount == 1) {
+                backsound.muted = true;
+                const audio = new Audio('/audio/kenali/gameover.mp3');
+                audio.play();
+
+                playerGameOver = "Kamu Kalah";
+                isGamePlay = false;
+                gameOverPlayer();
               }
             }
 
@@ -243,9 +301,7 @@ export default function Page() {
                 context?.drawImage(life3 as CanvasImageSource, drawX, playerLifeProp.y, playerLifeProp.sizeX, playerLifeProp.sizeY);
               } else if (playerLifeCount === 1) {
                 context?.drawImage(life4 as CanvasImageSource, drawX, playerLifeProp.y, playerLifeProp.sizeX, playerLifeProp.sizeY);
-              } else if (playerLifeCount === 0) {
-                isGamePlay = false;
-              }
+              } 
             }
 
             function drawTrashHorizontal() {
@@ -267,34 +323,67 @@ export default function Page() {
                 context?.drawImage(trashObjectData[thisTrashObject].image as CanvasImageSource, trashObjectProp.x, trashObjectProp.y, trashObjectProp.size, trashObjectProp.size);
             }
 
+            function gameOverPlayer() {
+              gameover!.textContent = playerGameOver;
+              gameoverScreen!.style.display = "flex";
+            }
+
+            playAgain?.addEventListener('click', () => {
+              window.location.reload();
+            });
+
+            close?.addEventListener('click', () => {
+              window.location.href = "/";
+            });
+
             function gameLoop() {
                 context?.clearRect(0, 0, canvas!.width, canvas!.height);
                 drawBackground();
-                drawTrashHorizontal();
+                drawTrashHorizontal();                                
                 drawTrashObject();
-                
+
                 if (isGamePlay) {
                   trashUpdateMove();
+                  checkTrashCollusion();                  
                 }
-
-                checkTrashCollusion();
-                drawLife();                
+                
                 requestAnimationFrame(gameLoop);                
+                drawLife();      
             }
 
             gameLoop();
         }
 
+        const fetchIsLoading = async() => {
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          setIsLoading(false);
+        }
+
         fetchCanvas();
+        fetchIsLoading()
     }, []);
   return (
     <div className='fixed font-pixelify'>
-      <canvas ref={canvasRef} className='w-full h-screen' width={1570} height={650}/>
-      <p className='absolute lg:top-12 top-6 left-14 font-[700] text-[24px] lg:text-[40px] text-shadow-2xl text-[#FFAA00]' style={{ WebkitTextStroke: '1px black' }} id='score'>Skor: 0</p>
 
-      <div className="bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center" id='playScreen'>
-        <p className='font-[700] text-[50px] lg:text-[70px] text-[#FFAA00] pulse cursor-pointer' style={{ WebkitTextStroke: '2px black' }} id='play'>Mulai</p>
+      <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='playScreen'>
+        <p className='font-[700] text-[50px] lg:text-[80px] text-[#FFAA00] pulse cursor-pointer' style={{ WebkitTextStroke: '2px black' }} id='play'>Mulai</p>
       </div>
+
+      <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='countdownScreen'>
+        <p className='font-[700] text-[50px] lg:text-[80px] pulse text-[#FFAA00]' style={{ WebkitTextStroke: '2px black' }} id='countdown'>3</p>
+      </div>
+
+      <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='gameoverScreen'>
+        <p className='font-[700] text-[50px] lg:text-[80px] text-[#FFAA00]' style={{ WebkitTextStroke: '2px black' }} id='gameover'>KAMU KALAH</p>
+        <div className="flex justify-center items-center mt-12 gap-20">
+          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='playAgain'>Mulai Lagi</button>
+          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='close'>Keluar</button>
+        </div>
+      </div>
+
+      <Loading className={`${isLoading ? 'flex' : 'opacity-0 duration-400'}`}/>
+      <p className="absolute lg:top-12 top-6 left-14 font-[700] text-[24px] lg:text-[40px] text-shadow-2xl text-[#FFAA00]" style={{ WebkitTextStroke: '1px black' }} id='score'>Skor: 0</p>
+      <canvas ref={canvasRef} className='w-full h-screen' width={1570} height={650}/>
 
       <div className="absolute opacity-0 pointer-events-none">
         <img src={life1.src} className='w-[140px] right-12 h-auto absolute top-12' alt="" id="life1" />
