@@ -24,6 +24,9 @@ import img10 from '../../../public/image/kenali/trash/10.png'
 import img11 from '../../../public/image/kenali/trash/11.png'
 import img12 from '../../../public/image/kenali/trash/12.png'
 import Loading from '../ui/Loading'
+import chevronRight from '../../../public/image/analog/right.svg';
+import chevronLeft from '../../../public/image/analog/left.svg';
+import chevronDown from '../../../public/image/analog/down.svg';
 
 export default function Page() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -64,6 +67,9 @@ export default function Page() {
             const gameover = document.getElementById("gameover");
             const playAgain = document.getElementById('playAgain');
             const close = document.getElementById("close");
+            const chevronLeft = document.getElementById('chevronLeft');
+            const chevronDown = document.getElementById('chevronDown');
+            const chevronRight = document.getElementById('chevronRight');
             let thisTrashObject = 0;
             let scoreCount = 0;
             let playerLifeCount = 4;
@@ -197,6 +203,30 @@ export default function Page() {
 
               trashObjectProp.y += 3;
             }
+
+            chevronLeft?.addEventListener("touchstart", (e: any) => {
+              if (e.key.toLowerCase() === "a") keysProp.a = true;
+            });
+
+            chevronRight?.addEventListener("touchstart", (e: any) => {
+              if (e.key.toLowerCase() === "s") keysProp.s = true;
+            });
+
+            chevronDown?.addEventListener("touchstart", (e: any) => {
+              if (e.key.toLowerCase() === "d") keysProp.d = true;
+            });
+
+            chevronLeft?.addEventListener("touchend", (e: any) => {
+              if (e.key.toLowerCase() === "a") keysProp.a = false;
+            });
+
+            chevronRight?.addEventListener("touchend", (e: any) => {
+              if (e.key.toLowerCase() === "s") keysProp.s = false;
+            });
+
+            chevronDown?.addEventListener("touchend", (e: any) => {
+              if (e.key.toLowerCase() === "d") keysProp.d = false;
+            });
 
             function gameCollusion(a: any, b: any) {
               return (
@@ -364,9 +394,12 @@ export default function Page() {
     }, []);
   return (
     <div className='fixed font-pixelify'>
-
       <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='playScreen'>
         <p className='font-[700] text-[50px] lg:text-[80px] text-[#FFAA00] pulse cursor-pointer' style={{ WebkitTextStroke: '2px black' }} id='play'>Mulai</p>
+      </div>
+
+      <div className={`bg-black rotate-phone w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-40' : 'z-0'}`} id='playScreen'>
+        <video className='' autoPlay muted loop src="/video/rotate-phone.mp4"></video>
       </div>
 
       <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='countdownScreen'>
@@ -375,15 +408,21 @@ export default function Page() {
 
       <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='gameoverScreen'>
         <p className='font-[700] text-[50px] lg:text-[80px] text-[#FFAA00]' style={{ WebkitTextStroke: '2px black' }} id='gameover'>KAMU KALAH</p>
-        <div className="flex justify-center items-center mt-12 gap-20">
-          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='playAgain'>Mulai Lagi</button>
-          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='close'>Keluar</button>
+        <div className="flex justify-center items-center mt-4 lg:mt-12 gap-20">
+          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[14px] lg:text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='playAgain'>Mulai Lagi</button>
+          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[14px] lg:text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='close'>Keluar</button>
         </div>
       </div>
 
       <Loading className={`${isLoading ? 'flex' : 'opacity-0 duration-400'}`}/>
+      <div className={`absolute flex justify-center z-50 items-center gap-4 bottom-8 left-12 ${isLoading == false ? 'z-20' : 'z-0'}`}>
+        <img src={chevronLeft.src} className='w-[30px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronLeft' />
+        <img src={chevronDown.src} className='w-[30px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronDown' />
+        <img src={chevronRight.src} className='w-[30px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronRight' />
+      </div>
+
       <p className="absolute lg:top-12 top-6 left-14 font-[700] text-[24px] lg:text-[40px] text-shadow-2xl text-[#FFAA00]" style={{ WebkitTextStroke: '1px black' }} id='score'>Skor: 0</p>
-      <canvas ref={canvasRef} className='w-full h-screen' width={1570} height={650}/>
+      <canvas ref={canvasRef} className='w-full h-screen' width={1920} height={650}/>
 
       <div className="absolute opacity-0 pointer-events-none">
         <img src={life1.src} className='w-[140px] right-12 h-auto absolute top-12' alt="" id="life1" />

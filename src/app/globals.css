@@ -183,6 +183,14 @@ body {
     scrollbar-width: none;
 }
 
+.rotate-phone {
+  display: none;
+}
+
+.analog-game {
+  display: none;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .display-flex {
     display: flex;
@@ -195,6 +203,16 @@ body {
   .display-none,
   .display-none-block {
     display: none;
+  }
+
+  .rotate-phone {
+    display: flex;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  .analog-game {
+    display: flex;
   }
 }
 
