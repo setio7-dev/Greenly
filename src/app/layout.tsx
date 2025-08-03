@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+    <html className="overflow-x-hidden" lang="en" style={{ scrollBehavior: 'smooth' }}>
       <head> 
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />

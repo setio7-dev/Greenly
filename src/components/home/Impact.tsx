@@ -58,7 +58,7 @@ export default function Impact() {
             </div>
           </div>
         </div>  
-        <div className="w-full lg:h-screen h-[170vh] object-cover bg-cover -mt-12" style={{backgroundImage: `url(${background.src})`}}>
+        <div className="w-full lg:h-screen h-[190vh] object-cover bg-cover -mt-12" style={{backgroundImage: `url(${background.src})`}}>
             <div className="bg-white rounded-b-lg w-[94vw] h-[58vh] flex flex-col justify- gap-10 pt-26 mx-auto">
                 <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-center lg:gap-0 gap-2 lg:px-20 px-6">
                     <p className='lg:text-[42px] lg:w-[320px] w-full lg:text-start text-center text-[24px] font-[700] text-transparent bg-clip-text bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_51%)]' data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">DAMPAK POLUSI UDARA</p>
