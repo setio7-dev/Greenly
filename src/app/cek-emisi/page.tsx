@@ -157,7 +157,7 @@ export default function Page() {
         <div className="w-full flex bg-white justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 px-6 fixed cursor-pointer z-30">
           <Link href="/" className="flex justify-center gap-1 cursor-pointer items-center">
             <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />
-            <h1 className="font-poppins text-[18px] font-[600] lg:text-[20px]">Back</h1>
+            <h1 className="font-poppins text-[18px] font-[600] lg:text-[20px]">Kembali</h1>
           </Link>
         </div>
         <div className='flex flex-col justify-center items-center font-poppins min-h-screen pb-20 lg:pt-30 pt-24 lg:px-40 px-6 container mx-auto'>
@@ -187,7 +187,7 @@ export default function Page() {
             </div>
             <div className="flex flex-col justify-center items-center gap-4 pt-12">
                 <h1 className='lg:text-[26px] text-[18px] font-[600]'>Jarak Tempuh (Km)</h1>
-                <input value={distance} onChange={(e) => setDistance(e.target.value)} type="number" className='lg:text-[16px] lg:w-full w-[200px] text-[14px] border-4 border-white rounded-xl px-3 outline-none py-2' />
+                <input value={distance} onChange={(e) => setDistance(e.target.value)} type="number" className='lg:text-[16px] lg:w-[300px] w-[200px] text-[14px] border-4 border-white rounded-xl px-3 outline-none py-2' />
             </div>
           </div>
           <button onClick={handleTotalEmisi} className='bg-[#00AD03] text-white outline-none lg:text-[24px] text-[16px] font-[500] rounded-lg px-16 py-2 duration-200 border-2 border-[#00AD03] hover:bg-transparent hover:text-[#00AD03] cursor-pointer mt-12'>Hitung</button>

@@ -1,4 +1,5 @@
 'use client'
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Community from '@/components/water/Community'
 import Fact from '@/components/water/Fact'
@@ -18,6 +19,7 @@ export default function page() {
       <Impact/>
       <Solution/>
       <Community/>
+      <Footer/>
     </div>
   )
 }

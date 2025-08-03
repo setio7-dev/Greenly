@@ -166,7 +166,7 @@ export default function GreenlyBot() {
       <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 px-6 fixed cursor-pointer z-30">
         <Link href="/" className="flex justify-center gap-1 cursor-pointer items-center">
           <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />
-          <h1 className="font-poppins font-[600] text-[18px] lg:text-[20px]">Back</h1>
+          <h1 className="font-poppins font-[600] text-[18px] lg:text-[20px]">Kembali</h1>
         </Link>
       </div>
 

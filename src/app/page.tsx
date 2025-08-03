@@ -7,17 +7,25 @@ import Graphic from '@/components/home/Graphic'
 import Impact from '@/components/home/Impact'
 import Welcome from '@/components/home/Welcome'
 import React from 'react'
+import Navbar from '@/components/Navbar'
+import Chatbot from '@/components/home/Chatbot'
+import Game from '@/components/home/Game'
+import Footer from '@/components/Footer'
 
 export default function page() {
   return (
     <div className='font-poppins'>
+      <Navbar/>
       <Welcome/>
       <Impact/>
       <Accordion/>
+      <Chatbot/>
       <Article/>
       <Category/>
       <Graphic/>
+      <Game/>
       <Solution/>
+      <Footer/>
     </div>
   )
 }

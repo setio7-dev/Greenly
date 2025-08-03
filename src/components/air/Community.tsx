@@ -27,8 +27,9 @@ export default function Community() {
     <div className='pb-24 font-poppins' id='komunitas'>
       <div className="" data-aos="fade-up" data-aos-duration="800">
         <h1 className="font-[600] text-center lg:text-[32px] text-[24px]">
+          Satu Aksi, Sejuta Udara
           <span className="relative inline-block">
-            Satu Aksi, Sejuta Udara Tanpa Polusi
+            Tanpa Polusi
             <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-[#7499BB] rounded-full"></span>
           </span>
         </h1>

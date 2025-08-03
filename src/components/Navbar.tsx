@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { dropdownList } from '@/app/data/Element';
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../../public/logo/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,52 +45,52 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex lg:justify-center justify-between lg:px-0 px-8 items-center font-poppins text-black lg:h-[14vh] h-[10vh] lg:gap-106 gap-0 fixed w-full bg-white z-30">
+    <div className="flex lg:justify-center justify-between lg:px-0 px-8 items-center font-poppins text-black lg:h-[14vh] h-[10vh] lg:gap-76 gap-0 fixed w-full bg-white z-30">
       <Link href="/">
-        <h1 className='font-[600] lg:text-[26px] text-[24px]'>Greenly</h1>
+        <Image src={logo.src} width={110} height={80} alt='image' className='lg:w-[110px] w-[90px] h-auto'/>
       </Link>
       <div className={`flex lg:flex-row flex-col bg-white lg:w-auto w-[200px] text-[16px] lg:h-auto h-[100vh] top-0 justify-center items-center gap-8 lg:text-[18px] font-[500] duration-700 lg:relative absolute ${isOpenNav ? 'right-0' : '-right-[300px]'}`}>
-        <a
-          href="#"
+        <Link
+          href="/"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
           Beranda
-        </a>
+        </Link>
         <a
-          href="#fakta"
+          href="#tentangkami"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
-          Fakta
+          Tentang Kami
         </a>
-        <a
-          href="#ancaman"
+        <Link
+          href="/cek-emisi"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
-          Ancaman
-        </a>
+          Kalkulator
+        </Link>
         <a
-          href="#aksi"
+          href="#berita"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
-          Aksi
+          Berita
         </a>
-        <a
-          href="#komunitas"
+        <Link
+          href="/chatbot"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
-          Komunitas
-        </a>
+          Chatbot
+        </Link>
         <a
           href="/chatbot"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
-          AI Chat
+          Permainan
         </a>
         <div className="flex gap-2 cursor-pointer relative justify-center items-center">
             <svg className='w-[22px] h-auto' viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +101,7 @@ export default function Navbar() {
             <svg onClick={handleOpen} className={`w-[10px] h-auto duration-200 ${isOpen ? 'rotate-180' : "rotate-0"}`} viewBox="0 0 17 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.374196 0.420639C0.613866 0.151304 0.938885 0 1.27778 0C1.61667 0 1.94169 0.151304 2.18136 0.420639L8.50772 7.53218L14.8341 0.420639C15.0751 0.158937 15.398 0.0141279 15.7331 0.0174012C16.0682 0.0206745 16.3887 0.171768 16.6257 0.438139C16.8626 0.70451 16.997 1.06485 17 1.44154C17.0029 1.81823 16.874 2.18114 16.6412 2.4521L9.4113 10.5794C9.17163 10.8487 8.84661 11 8.50772 11C8.16882 11 7.8438 10.8487 7.60413 10.5794L0.374196 2.4521C0.134599 2.18268 0 1.81732 0 1.43637C0 1.05541 0.134599 0.690055 0.374196 0.420639Z" fill="black"/>
             </svg>
-            <div className={`${isOpen ? 'h-[140px] border' : 'h-0 border-0'} duration-300 transition-all absolute top-full mt-2 bg-white rounded-b-xl shadow-md w-[120px] overflow-y-auto z-10 flex flex-col border-gray-200`}>
+            <div className={`${isOpen ? 'h-[170px] border' : 'h-0 border-0'} duration-300 transition-all absolute top-full mt-2 bg-white rounded-b-xl shadow-md w-[120px] overflow-y-auto z-10 flex flex-col border-gray-200`}>
               {navbarFiltered.map((item: any) => (
                 <div key={item.id} className=" px-4 py-2 hover:bg-gray-100 cursor-pointer text-center transition-all duration-200">
                   <p onClick={() => navigate.push(item.path)} className="font-[400] text-[16px] text-gray-800">{item.label}</p>

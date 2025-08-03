@@ -11,7 +11,7 @@ export default function Home() {
       </div>
       <div className="relative" data-aos="fade-left" data-aos-duration="900">
         <Image width={500} height={500} className='lg:w-[500px] bounce h-auto w-[260px]' src='/image/dirt/dirt.png' alt='tree'/>
-        <div className="w-80 h-80 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full -z-10 bg-[#773535] blur-3xl opacity-50 shadow-[0_0_120px_#98CD00]"></div>
+        <div className="lg:w-80 w-60 lg:h-80 h-60 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full -z-10 bg-[#773535] blur-3xl opacity-50 shadow-[0_0_120px_#98CD00]"></div>
       </div>
     </div>
   )

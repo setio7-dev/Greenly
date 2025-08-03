@@ -108,7 +108,7 @@ export default function Article() {
   };
 
   return (
-    <div className='pb-20 font-poppins'>
+    <div className='pb-20 font-poppins' id='berita'>
       <div className="container mx-auto px-6 lg:px-16">
         <h1 className='lg:text-[36px] text-[24px] font-[600]' data-aos="fade-right" data-aos-duration="800">Artikel Populer</h1>
         <div className="mt-8 flex lg:flex-row flex-col justify-center items-center lg:gap-12 gap-10">

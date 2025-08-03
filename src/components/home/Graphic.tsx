@@ -118,7 +118,7 @@ export default function Graphic() {
   }
 
   return (
-    <div className='container w-full mx-auto font-poppins pb-20 px-6 lg:px-16' data-aos="fade-up" data-aos-duration="800">
+    <div className='container w-full mx-auto font-poppins lg:pb-20 pb-28 px-6 lg:px-16' data-aos="fade-up" data-aos-duration="800">
       <h1 className='lg:text-[32px] text-[24px] font-[500] w-full md:w-[400px]'>
         Presentase Data Dalam Bentuk Presentase
       </h1>
