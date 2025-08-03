@@ -423,7 +423,7 @@ export default function Page() {
       </div>
 
       <Loading className={`${isLoading ? 'flex' : 'opacity-0 duration-400'}`}/>
-      <div className={`absolute analog-game flex justify-center z-50 items-center gap-4 bottom-8 left-12 ${isLoading == false ? 'z-20' : 'z-0'}`}>
+      <div className={`absolute analog-game flex justify-center items-center gap-4 bottom-8 left-12 ${isLoading == false ? 'z-20' : 'z-0'}`}>
         <img src={chevronLeft.src} className='w-[30px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronLeft' />
         <img src={chevronDown.src} className='w-[30px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronDown' />
         <img src={chevronRight.src} className='w-[30px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronRight' />
