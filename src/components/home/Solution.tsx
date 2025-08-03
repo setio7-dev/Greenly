@@ -28,7 +28,7 @@ export default function Solution() {
         modules={[Navigation, EffectCards]}
         navigation
         loop
-        className='w-full max-w-[400px] ml-auto '
+        className='w-full lg:max-w-[400px] max-w-[260px] ml-auto '
         data-aos="fade-left" data-aos-duration="800"
       >
         <SwiperSlide className='flex justify-center items-center'>
