@@ -212,28 +212,28 @@ export default function Page() {
               trashObjectProp.y += 3;
             }
 
-            chevronLeft?.addEventListener("touchstart", (e: any) => {
-              if (e.key.toLowerCase() === "a") keysProp.a = true;
+            chevronLeft?.addEventListener("touchstart", () => {
+              keysProp.a = true;
             });
-
-            chevronRight?.addEventListener("touchstart", (e: any) => {
-              if (e.key.toLowerCase() === "s") keysProp.s = true;
+            
+            chevronRight?.addEventListener("touchstart", () => {
+              keysProp.s = true;
             });
-
-            chevronDown?.addEventListener("touchstart", (e: any) => {
-              if (e.key.toLowerCase() === "d") keysProp.d = true;
+            
+            chevronDown?.addEventListener("touchstart", () => {
+              keysProp.d = true;
             });
-
-            chevronLeft?.addEventListener("touchend", (e: any) => {
-              if (e.key.toLowerCase() === "a") keysProp.a = false;
+            
+            chevronLeft?.addEventListener("touchend", () => {
+              keysProp.a = false;
             });
-
-            chevronRight?.addEventListener("touchend", (e: any) => {
-              if (e.key.toLowerCase() === "s") keysProp.s = false;
+            
+            chevronRight?.addEventListener("touchend", () => {
+              keysProp.s = false;
             });
-
-            chevronDown?.addEventListener("touchend", (e: any) => {
-              if (e.key.toLowerCase() === "d") keysProp.d = false;
+            
+            chevronDown?.addEventListener("touchend", () => {
+              keysProp.d = false;
             });
 
             function gameCollusion(a: any, b: any) {
