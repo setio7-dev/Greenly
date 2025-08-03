@@ -214,6 +214,10 @@ body {
   .analog-game {
     display: flex;
   }
+
+  .rotate-phone {
+    display: none;
+  }
 }
 
 /* background color */
