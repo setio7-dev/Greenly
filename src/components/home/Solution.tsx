@@ -5,7 +5,7 @@ import solution1 from '../../../public/image/home/solution1.png'
 import solution2 from '../../../public/image/home/solution2.png'
 import solution3 from '../../../public/image/home/solution3.png'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, EffectCards } from 'swiper/modules'
+import { EffectCards } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-cards'
@@ -25,9 +25,7 @@ export default function Solution() {
       <Swiper
         effect="cards"
         grabCursor={true}
-        modules={[Navigation, EffectCards]}
-        navigation
-        loop
+        modules={[EffectCards]}
         className='w-full lg:max-w-[400px] max-w-[260px] ml-auto '
         data-aos="fade-left" data-aos-duration="800"
       >
