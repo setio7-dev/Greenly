@@ -191,7 +191,7 @@ export default function Page() {
               { id: 22, image: trashObject2, type: 4 },
               { id: 23, image: trashObject8, type: 2 },
               { id: 24, image: trashObject5, type: 2 },
-            ];            
+            ];
 
             document.addEventListener('keydown', (e: any) => {
               if (e.key.toLowerCase() === "a") keysProp.a = true;

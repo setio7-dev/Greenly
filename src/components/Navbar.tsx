@@ -86,7 +86,7 @@ export default function Navbar() {
           Chatbot
         </Link>
         <a
-          href="/chatbot"
+          href="/permainan"
           className="relative link-gradient text-black font-medium lg:text-[18px] text-[16px]"
           style={{ ['--gradient' as any]: colorNav }}
         >
