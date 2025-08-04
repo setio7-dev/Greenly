@@ -118,13 +118,14 @@ export default function Page() {
             const trashProp = {
                 x: (canvas!.width - 180) / 2,
                 y: (canvas!.height - 180),
-                size: 180
+                sizeX: 250,
+                sizeY: 180,
             }
 
             const playerLifeProp = {
               x: canvas!.width - 300,
               y: 50,
-              sizeX: 220,
+              sizeX: 240,
               sizeY: 50
             }
 
@@ -248,17 +249,17 @@ export default function Page() {
             function checkTrashCollusion() {
               const totalItems = trashData.length;
               const spacing = 20;
-              const totalWidth = trashProp.size * totalItems + spacing * (totalItems - 1);
+              const totalWidth = trashProp.sizeX * totalItems + spacing * (totalItems - 1);
               const startX = (canvas!.width - totalWidth) / 2;
-              const y = canvas!.height - trashProp.size;
+              const y = canvas!.height - trashProp.sizeY;
             
               for (let index = 0; index < trashData.length; index++) {
-                const x = startX + index * (trashProp.size + spacing);
+                const x = startX + index * (trashProp.sizeX + spacing);
               
                 const target = {
                   x,
                   y,
-                  size: trashProp.size
+                  size: trashProp.sizeX
                 };
 
                 if (trashObjectProp.y > canvas!.height) {
@@ -345,15 +346,15 @@ export default function Page() {
             function drawTrashHorizontal() {
                 const totalItems = trashData.length;
                 const spacing = 20;
-                const totalWidth = trashProp.size * totalItems + spacing * (totalItems - 1);
+                const totalWidth = trashProp.sizeX * totalItems + spacing * (totalItems - 1);
                         
                 const startX = (canvas!.width - totalWidth) / 2;
-                const y = (canvas!.height - trashProp.size);
+                const y = (canvas!.height - trashProp.sizeY);
 
                 for (let index = 0; index < trashData.length; index++) {
                   const element = trashData[index];
-                  const x = startX + index * (trashProp.size + spacing)
-                  context?.drawImage(element.image as CanvasImageSource, x, y, trashProp.size, trashProp.size)
+                  const x = startX + index * (trashProp.sizeX + spacing)
+                  context?.drawImage(element.image as CanvasImageSource, x, y, trashProp.sizeX, trashProp.sizeY)
                 }
             }
 
