@@ -14,8 +14,8 @@ export default function Page() {
            <h1 className="font-poppins text-[18px] font-[600] lg:text-[20px]">Kembali</h1>
          </Link>
        </div>
-       <div className="flex flex-col justify-center items-center gap-10 pb-20 lg:px-0 px-6">
-            <div className="relative border-2 border-white rounded-[26px]" data-aos="fade-right" data-aos-duration="900">
+       <div className="flex flex-col justify-center items-center gap-10 pb-20 lg:px-0 px-6" data-aos="fade-up" data-aos-duration="900">
+            <div className="relative border-2 border-white rounded-[26px]">
                 <Image src={smartBin.src} width={1200} height={600} alt='image' className='lg:w-[1200px] lg:rounded-[0px] rounded-[26px] lg:h-auto w-full h-[40vh] bg-cover object-cover'/>
                 <div className="flex justify-between items-center absolute bottom-[0.2px] lg:px-10 px-6 h-[12vh] w-full rounded-[26px] bg-white/20 backdrop-blur-md">
                     <p className="text-white font-[600] lg:text-[28px] text-[20px]">Smart Bin</p>
@@ -28,15 +28,17 @@ export default function Page() {
                     </Link>
                 </div>
             </div>
-            <div className="relative border-2 border-white rounded-[26px]" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+            <div className="relative border-2 border-white rounded-[26px]">
                 <Image src={monsterJunk.src} width={1200} height={600} alt='image' className='lg:w-[1200px] lg:rounded-[0px] rounded-[26px] lg:h-auto w-full h-[40vh] bg-cover object-cover'/>
                 <div className="flex justify-between items-center absolute bottom-[0.2px] lg:px-10 px-6 h-[12vh] w-full rounded-[26px] bg-white/20 backdrop-blur-md">
                     <p className="text-white font-[600] lg:text-[28px] text-[20px]">Monster Junk</p>
-                    <div className="p-[2px] rounded-lg bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] inline-block cursor-pointer">
-                      <button className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] text-white font-[500] lg:text-[18px] text-[12px] cursor-pointer lg:px-10 px-6 py-2 rounded-lg w-full h-full">
-                        Mainkan
-                      </button>
-                    </div>
+                    <Link href="/monster-junk">
+                      <div className="p-[2px] rounded-lg bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] inline-block cursor-pointer">
+                        <button className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] text-white font-[500] lg:text-[18px] text-[12px] cursor-pointer lg:px-10 px-6 py-2 rounded-lg w-full h-full">
+                          Mainkan
+                        </button>
+                      </div>
+                    </Link>
                 </div>
             </div>
        </div>

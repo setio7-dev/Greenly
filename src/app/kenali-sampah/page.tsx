@@ -372,7 +372,7 @@ export default function Page() {
             });
 
             close?.addEventListener('click', () => {
-              window.location.href = "/";
+              window.location.href = "/permainan";
             });
 
             function gameLoop() {

@@ -19,15 +19,22 @@ import player1 from '../../../public/logo/chatbot-1.png'
 import playerMirror1 from '../../../public/logo/chatbot-mirror1.png'
 import player2 from '../../../public/logo/chatbot-2.png'
 import enemy from '../../../public/logo/enemy.png'
+import enemyMirror from '../../../public/logo/enemy-mirror.png'
+import Loading from '../ui/Loading'
 
 export default function Page() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchCanvas = () => {
       const canvas = canvasRef.current;
       const context = canvas?.getContext('2d');
       const background = document.getElementById('background');
+      const play = document.getElementById('play');
+      const playScreen = document.getElementById('playScreen');
+      const countdownScreen = document.getElementById('countdownScreen');
+      const countdown = document.getElementById('countdown');
       const trashObject1 = document.getElementById('trashObject1');
       const trashObject2 = document.getElementById('trashObject2');
       const trashObject3 = document.getElementById('trashObject3');
@@ -42,8 +49,97 @@ export default function Page() {
       const trashObject12 = document.getElementById('trashObject12');
       const player1 = document.getElementById("player1");
       const playerMirror1 = document.getElementById("playerMirror1");
-      const player2 = document.getElementById("player2");
       const enemy = document.getElementById("enemy");
+      const enemyMirror = document.getElementById("enemyMirror");
+      const score = document.getElementById('score');
+      const gameover = document.getElementById("gameover");
+      const gameoverScreen = document.getElementById('gameoverScreen');
+      const playAgain = document.getElementById('playAgain');
+      const close = document.getElementById("close");
+      const joystick = document.getElementById('joystick-container');
+      const thumb = document.getElementById('joystick-thumb');
+      let currentTrashIndex = 0;
+      const spawnedTrash: any[] = [];
+      let spawnInterval: NodeJS.Timeout;
+      let isGameOver = false; 
+      let isGamePlay = false;
+      let scoreCount = 0;
+      countdownScreen!.style.display = 'none';
+      gameoverScreen!.style.display = "none";            
+      const backsound = new Audio('/audio/monster/backsound.mp3');
+      backsound.loop = true;
+      let center = { x: 0, y: 0 };
+      let dragging = false;
+      let moveDirection = { x: 0, y: 0 };
+
+      play?.addEventListener('click', () => {              
+          backsound.play();
+          const elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if ((elem as any).webkitRequestFullscreen) {
+          (elem as any).webkitRequestFullscreen();
+        } else if ((elem as any).msRequestFullscreen) {
+          (elem as any).msRequestFullscreen();
+        }
+
+        playScreen!.style.display = 'none';
+        gameCountdown();
+      });
+
+      joystick?.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        dragging = true;
+        const rect = joystick.getBoundingClientRect();
+        center = {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2,
+        };
+      });
+
+      joystick?.addEventListener('touchmove', (e) => {
+        if (!dragging) return;
+        const touch = e.touches[0];
+        const dx = touch.clientX - center.x;
+        const dy = touch.clientY - center.y;
+        const dist = Math.min(Math.sqrt(dx * dx + dy * dy), 40);
+      
+        const angle = Math.atan2(dy, dx);
+        const x = Math.cos(angle) * dist;
+        const y = Math.sin(angle) * dist;
+      
+        thumb!.style.transform = `translate(${x}px, ${y}px)`;
+      
+        moveDirection = {
+          x: x / 40,
+          y: y / 40,
+        };
+      });
+
+      joystick?.addEventListener('touchend', () => {
+        dragging = false;
+        moveDirection = { x: 0, y: 0 };
+        thumb!.style.transform = 'translate(-50%, -50%)';
+      });
+
+      function gameCountdown() {
+        countdownScreen!.style.display = 'flex';
+        let countdownTotalCount = 3;
+
+        const audio = new Audio('/audio/kenali/countdown.wav');
+        audio.play();
+        const countdownInterval = setInterval(() => {
+          countdown!.textContent = `${countdownTotalCount}`;
+          countdownTotalCount--;
+
+          if (countdownTotalCount < 0) {
+            clearInterval(countdownInterval); 
+            countdownScreen!.style.display = 'none';
+            isGamePlay = true;
+            startSpawningTrash();
+          }
+        }, 1000);
+      }
 
       const keys = {
           w: false,
@@ -60,6 +156,8 @@ export default function Page() {
           x: 50,
           y: 50,
           size: 100,
+          sizeX: 120,
+          sizeY: 100,
           speed: 8,
           angle: 0
       }
@@ -67,9 +165,10 @@ export default function Page() {
       const enemyProp = {
           x: canvas!.width + 50,
           y: canvas!.height + 50,
+          sizeX: 110,
+          sizeY: 90,
           size: 100,
           speed: 6,
-          angle: 45
       }
 
       document.addEventListener('keydown', (e) => {
@@ -121,9 +220,7 @@ export default function Page() {
           if (distance > 1) {
               enemyProp.x += (dx / distance) * enemyProp.speed;
               enemyProp.y += (dy / distance) * enemyProp.speed;
-          }
-        
-          enemyProp.angle = Math.atan2(dy, dx) + Math.PI / 2;
+          }      
       }
 
       const trashObjectData = [
@@ -153,6 +250,34 @@ export default function Page() {
         { id: 24, image: trashObject5, type: 2 },
       ];
 
+      function spawnTrash() {
+        const spawnCount = 3;
+      
+        for (let i = 0; i < spawnCount; i++) {
+          if (currentTrashIndex < trashObjectData.length) {
+            const spawn = {
+              ...trashObjectData[currentTrashIndex],
+              x: Math.random() * (canvas!.width - 80),
+              y: Math.random() * (canvas!.height - 80),
+              size: 100,
+            };
+            spawnedTrash.push(spawn);
+            currentTrashIndex++;
+          } else {
+            stopSpawningTrash();
+            break;
+          }
+        }
+      }
+
+      function startSpawningTrash(interval = 3000) {
+        spawnInterval = setInterval(spawnTrash, interval);
+      }
+
+      function stopSpawningTrash() {
+        clearInterval(spawnInterval);
+      }
+
       function gameCollusion(a: any, b: any) {
           return (
               a.x < b.x + b.size &&
@@ -160,6 +285,51 @@ export default function Page() {
               a.y < b.y + b.size &&
               a.y + a.size > b.y 
           )
+      }
+
+      function checkCollisions() {
+        for (let i = spawnedTrash.length - 1; i >= 0; i--) {
+          const trash = spawnedTrash[i];
+          if (gameCollusion(playerProp, trash)) {
+            spawnedTrash.splice(i, 1);
+            const audio = new Audio('/audio/monster/coint.wav');
+            audio.play();
+            currentTrashIndex--;
+            scoreCount+=10;
+            score!.textContent = `Skor: ${scoreCount}`;
+          }
+        }
+      }
+
+      function checkEnemyCollusion() {
+        if (gameCollusion(playerProp, enemyProp)) {
+          const audio = new Audio('/audio/monster/gameover.wav');
+          audio.play();
+          isGameOver = true;
+          stopSpawningTrash();
+        } 
+      }
+
+      function gameOver() {
+        if (scoreCount > 320) {
+          const audio = new Audio('/audio/monster/success.wav');
+          audio.play();
+          backsound.muted = true;
+          gameover!.textContent = "KAMU MENANG";
+          gameoverScreen!.style.display = 'flex';
+          isGameOver = true;
+          stopSpawningTrash();
+        } else if (isGameOver) {
+          gameover!.textContent = "KAMU KALAH";
+          gameoverScreen!.style.display = 'flex';
+          backsound.muted = true;
+        }
+      }
+
+      function drawTrash() {
+        for (const item of spawnedTrash) {
+          context?.drawImage(item.image as CanvasImageSource, item.x, item.y, item.size, item.size);
+        }
       }
 
       function drawBackground() {
@@ -172,9 +342,9 @@ export default function Page() {
         context!.rotate(playerProp.angle);
 
         if (keys.a) {
-          context!.drawImage(playerMirror1 as CanvasImageSource, -playerProp.size / 2, -playerProp.size / 2, playerProp.size, playerProp.size);
+          context!.drawImage(playerMirror1 as CanvasImageSource, -playerProp.size / 2, -playerProp.size / 2, playerProp.sizeX, playerProp.sizeY);
         } else {
-          context!.drawImage(player1 as CanvasImageSource, -playerProp.size / 2, -playerProp.size / 2, playerProp.size, playerProp.size);
+          context!.drawImage(player1 as CanvasImageSource, -playerProp.size / 2, -playerProp.size / 2, playerProp.sizeX, playerProp.sizeY);
         }
 
         context!.restore();          
@@ -182,29 +352,89 @@ export default function Page() {
 
       function drawEnemy() {
         context!.save();
-        context!.translate(enemyProp.x + enemyProp.size / 2, enemyProp.y + enemyProp.size / 2);
-        context!.rotate(enemyProp.angle);
-        context!.drawImage(enemy as CanvasImageSource, -enemyProp.size / 2, -enemyProp.size / 2, enemyProp.size, enemyProp.size);
-        context!.restore();         
+        context!.translate(enemyProp.x + enemyProp.sizeX / 2, enemyProp.y + enemyProp.sizeY / 2);
+        context!.drawImage(enemy as CanvasImageSource, -enemyProp.sizeX / 2, -enemyProp.sizeY / 2, enemyProp.sizeX, enemyProp.sizeY);
+        const isPlayerRight = playerProp.x > enemyProp.x;
+        if (isPlayerRight) {
+          context!.drawImage(enemyMirror as CanvasImageSource, -enemyProp.sizeX / 2, -enemyProp.sizeY / 2, enemyProp.sizeX, enemyProp.sizeY);
+        } else {
+          context!.drawImage(enemy as CanvasImageSource, -enemyProp.sizeX / 2, -enemyProp.sizeY / 2, enemyProp.sizeX, enemyProp.sizeY);
+        }
+      
+        context!.restore();
       }
+
+      playAgain?.addEventListener('click', () => {
+        window.location.reload();
+      });
+
+      close?.addEventListener('click', () => {
+        window.location.href = "/permainan";
+      });
       
       function gameLoop() {
         context?.clearRect(0, 0, canvas!.width, canvas!.height);
         drawBackground();
         drawPlayer();
         drawEnemy();
-        updatePlayerMove();
-        updateEnemyMove();
-        requestAnimationFrame(gameLoop);
-      }
+        
+        if (isGamePlay) {
+          drawTrash();
+          updatePlayerMove();
+          updateEnemyMove();
+        }
 
+        checkCollisions();
+        checkEnemyCollusion();
+        gameOver();
+
+        playerProp.x += moveDirection.x * playerProp.speed;
+        playerProp.y += moveDirection.y * playerProp.speed;
+        
+        if (!isGameOver) {
+          requestAnimationFrame(gameLoop);
+        }
+      }
+          
       gameLoop();
     }
 
+    const fetchIsLoading = async() => {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setIsLoading(false);
+    }
+
     fetchCanvas();
+    fetchIsLoading();
   }, []);
   return (
     <div className='fixed font-pixelify'>
+      <div id="joystick-container" className="fixed rotate-phone bottom-6 left-6 w-[80px] h-[80px] rounded-full border-2 border-gray-400 bg-white/10 touch-none">
+        <div id="joystick-thumb" className="w-[50px] h-[50px] bg-[#FFAA00] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100"></div>
+      </div>
+
+      <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='playScreen'>
+        <p className='font-[700] text-[50px] lg:text-[80px] text-[#FFAA00] pulse cursor-pointer' style={{ WebkitTextStroke: '2px black' }} id='play'>Mulai</p>
+      </div>
+
+      <div className={`bg-black rotate-phone w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-40' : 'z-0'}`} id='playScreen'>
+        <video className='' autoPlay muted loop src="/video/rotate-phone.mp4"></video>
+      </div>
+
+      <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='countdownScreen'>
+        <p className='font-[700] text-[50px] lg:text-[80px] pulse text-[#FFAA00]' style={{ WebkitTextStroke: '2px black' }} id='countdown'>3</p>
+      </div>
+
+      <div className={`bg-[#0000007b] w-full h-screen absolute top-0 flex flex-col justify-center items-center ${isLoading == false ? 'z-20' : 'z-0'}`} id='gameoverScreen'>
+        <p className='font-[700] text-[50px] lg:text-[80px] text-[#FFAA00]' style={{ WebkitTextStroke: '2px black' }} id='gameover'>KAMU KALAH</p>
+        <div className="flex justify-center items-center mt-4 lg:mt-12 gap-20">
+          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[14px] lg:text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='playAgain'>Mulai Lagi</button>
+          <button className='text-white border-2 border-white px-8 py-2 rounded-md text-[14px] lg:text-[20px] font-[500] cursor-pointer hover:scale-90 hover:opacity-60 duration-200' id='close'>Keluar</button>
+        </div>
+      </div>
+
+      <Loading className={`${isLoading ? 'flex' : 'opacity-0 duration-400'}`}/>
+      <p className="absolute lg:top-12 top-6 left-14 font-[700] text-[24px] lg:text-[40px] text-shadow-2xl text-[#FFAA00]" style={{ WebkitTextStroke: '1px black' }} id='score'>Skor: 0</p>
       <canvas ref={canvasRef} width={1920} height={650} className='w-full h-screen'></canvas>
 
       <div className="hidden">
@@ -225,6 +455,7 @@ export default function Page() {
         <img src={playerMirror1.src} alt="" id='playerMirror1' />
         <img src={player2.src} alt="" id='player2' />
         <img src={enemy.src} alt="" id='enemy' />
+        <img src={enemyMirror.src} alt="" id='enemyMirror' />
       </div>
     </div>
   )
