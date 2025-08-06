@@ -70,7 +70,7 @@ export default function Page() {
       backsound.loop = true;
       let center = { x: 0, y: 0 };
       let dragging = false;
-      let moveDirection = { x: 0, y: 0 };
+      let moveDirection = { x: 0, y: 0 };      
 
       play?.addEventListener('click', () => {              
           backsound.play();
@@ -100,11 +100,11 @@ export default function Page() {
       joystick?.addEventListener('touchmove', (e) => {
         if (!dragging) return;
         const touch = e.touches[0];
-        const dx = touch.clientX - center.x;
-        const dy = touch.clientY - center.y;
-        const dist = Math.min(Math.sqrt(dx * dx + dy * dy), 40);
+        analog.dx = touch.clientX - center.x;
+        analog.dy = touch.clientY - center.y;
+        const dist = Math.min(Math.sqrt(analog.dx * analog.dx + analog.dy * analog.dy), 40);
       
-        const angle = Math.atan2(dy, dx);
+        const angle = Math.atan2(analog.dy, analog.dx);
         const x = Math.cos(angle) * dist;
         const y = Math.sin(angle) * dist;
       
@@ -150,6 +150,11 @@ export default function Page() {
           ArrowLeft: false,
           ArrowDown: false,
           ArrowRight: false,
+      }
+
+      const analog = {
+        dx: 0,
+        dy: 0 
       }
 
       const playerProp = {
@@ -341,7 +346,7 @@ export default function Page() {
         context!.translate(playerProp.x + playerProp.size / 2, playerProp.y + playerProp.size / 2);
         context!.rotate(playerProp.angle);
 
-        if (keys.a) {
+        if (keys.a || analog.dx < 0) {
           context!.drawImage(playerMirror1 as CanvasImageSource, -playerProp.size / 2, -playerProp.size / 2, playerProp.sizeX, playerProp.sizeY);
         } else {
           context!.drawImage(player1 as CanvasImageSource, -playerProp.size / 2, -playerProp.size / 2, playerProp.sizeX, playerProp.sizeY);
