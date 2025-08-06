@@ -11,7 +11,7 @@ import ask from '../../../public/image/chatbot/ask.png';
 import send from '../../../public/image/chatbot/send.svg';
 import mic from '../../../public/image/chatbot/mic.png';
 import load from '../../../public/image/chatbot/answer.svg';
-import logo from '../../../public/image/tree/tree.png';
+import logo from '../../../public/logo/chatbot-2.png';
 
 interface Message {
   role: 'user' | 'bot';
@@ -149,7 +149,7 @@ export default function GreenlyBot() {
     <div>
       <div className={`absolute w-full h-screen font-poppins bg-[#00000024] z-50 flex-col justify-center items-center ${showMic ? 'flex' : 'hidden'}`}>
         <div className="bg-white rounded-lg p-6 lg:w-[340px] w-[280px] lg:h-[340px] h-[280px] flex flex-col justify-center items-center gap-8">
-          <Image src={logo.src} className='bounce-show lg:w-[120px] w-[80px]' width={120} height={120} alt='image'/>
+          <Image src={logo.src} className='bounce-show lg:w-[100px] w-[60px]' width={120} height={120} alt='image'/>
           <p className='font-[500] lg:text-[20px] text-[16px]'>Mendengarkan...</p>
           <div className="flex gap-1 items-end h-5">
             <span className="w-1 bg-green-500 animate-wave1 rounded-sm"></span>

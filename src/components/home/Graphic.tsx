@@ -39,27 +39,53 @@ const CategoryData = [
   {
     id: 1,
     category: 'total-emisi',
-    data: [{ id: 1, name: "Contoh", persen: 40 }]
+    data: [
+      { id: 1, name: "Sektor Energi", persen: 63.7 },
+      { id: 2, name: "Sektor Kehutanan", persen: 22.4 },
+      { id: 3, name: "Sektor Pertanian", persen: 7.5 },
+      { id: 4, name: "Sektor Limbah", persen: 4.5 },
+      { id: 5, name: "Sektor IPPU", persen: 1.9 }
+    ]
   },
   {
     id: 2,
     category: 'sektor-energi',
-    data: [{ id: 1, name: "Contoh", persen: 40 }]
+    data: [
+      { id: 1, name: "Transportasi", persen: 34.2 },
+      { id: 2, name: "Industri", persen: 27.5 },
+      { id: 3, name: "Kelistrikan", persen: 23.6 },
+      { id: 4, name: "Bangunan & Komersial", persen: 14.7 }
+    ]
   },
   {
     id: 3,
     category: 'sektor-ippu',
-    data: [{ id: 1, name: "Contoh", persen: 40 }]
+    data: [
+      { id: 1, name: "Produksi Semen", persen: 44.6 },
+      { id: 2, name: "Produksi Baja", persen: 25.3 },
+      { id: 3, name: "Kimia & Pupuk", persen: 18.1 },
+      { id: 4, name: "Refrigeran & Gas", persen: 12.0 }
+    ]
   },
   {
     id: 4,
     category: 'sektor-pertanian',
-    data: [{ id: 1, name: "Contoh", persen: 40 }]
+    data: [
+      { id: 1, name: "Emisi CH4 dari Sawah", persen: 45 },
+      { id: 2, name: "Emisi CH4 dari Ternak", persen: 30 },
+      { id: 3, name: "Penggunaan Pupuk Nitrogen", persen: 15 },
+      { id: 4, name: "Pembakaran Biomassa", persen: 10 }
+    ]
   },
   {
     id: 5,
     category: 'sektor-kehutanan',
-    data: [{ id: 1, name: "Contoh", persen: 40 }]
+    data: [
+      { id: 1, name: "Deforestasi", persen: 50 },
+      { id: 2, name: "Degradasi Hutan", persen: 30 },
+      { id: 3, name: "Konversi Gambut", persen: 15 },
+      { id: 4, name: "Kebakaran Hutan", persen: 5 }
+    ]
   },
   {
     id: 6,
@@ -71,7 +97,7 @@ const CategoryData = [
       { id: 4, name: "Padat", persen: 33 }
     ]
   },
-]
+];
 
 export default function Graphic() {
   const [category, setCategory] = useState('sektor-limbah')
