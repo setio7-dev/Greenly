@@ -323,6 +323,7 @@ export default function Page() {
           gameover!.textContent = "KAMU MENANG";
           gameoverScreen!.style.display = 'flex';
           isGameOver = true;
+          isGamePlay = false;
           stopSpawningTrash();
         } else if (isGameOver) {
           gameover!.textContent = "KAMU KALAH";
@@ -414,7 +415,7 @@ export default function Page() {
   }, []);
   return (
     <div className='fixed font-pixelify'>
-      <div id="joystick-container" className={`fixed bottom-6 left-6 w-[80px] h-[80px] rounded-full border-2 border-gray-400 bg-white/10 touch-none ${isLoading == false ? 'z-20' : 'z-0'}`}>
+      <div id="joystick-container" className={`fixed analog-game bottom-6 left-6 w-[80px] h-[80px] rounded-full border-2 border-gray-400 bg-white/10 touch-none ${isLoading == false ? 'z-20' : 'z-0'}`}>
         <div id="joystick-thumb" className="w-[50px] h-[50px] bg-[#FFAA00] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-100"></div>
       </div>
 

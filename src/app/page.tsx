@@ -11,10 +11,12 @@ import Navbar from '@/components/Navbar'
 import Chatbot from '@/components/home/Chatbot'
 import Game from '@/components/home/Game'
 import Footer from '@/components/Footer'
+import SplashScreen from './ui/SplashScreen'
 
 export default function page() {
   return (
     <div className='font-poppins'>
+      <SplashScreen/>
       <Navbar/>
       <Welcome/>
       <Impact/>
