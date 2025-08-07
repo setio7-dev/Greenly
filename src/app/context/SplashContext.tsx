@@ -7,6 +7,7 @@ interface SplashContextType {
     label: string;
     color: string;
     splash: string;
+    logo: string;
 }
 
 interface GlobalContextProps {
