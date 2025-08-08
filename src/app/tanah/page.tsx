@@ -8,10 +8,12 @@ import Impact from '@/components/dirt/Impact'
 import Solution from '@/components/dirt/Solution'
 import Threat from '@/components/dirt/Threat'
 import React from 'react'
+import SplashScreen from '../ui/SplashScreen'
 
 export default function page() {
   return (
     <div className='font-poppins'>
+      <SplashScreen/>
       <Navbar/>
       <Home/>
       <Fact/>
