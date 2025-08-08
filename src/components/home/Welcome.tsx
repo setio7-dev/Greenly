@@ -10,7 +10,7 @@ import Link from 'next/link'
 export default function Welcome() {
   return (
     <div className='flex flex-col items-center justify-start min-h-screen font-poppins lg:pb-10 lg:pt-28 pb-24 pt-12 container mx-auto'>
-      <div className="w-[95vw] h-[84vh] bg-cover flex relative justify-between mt-2 items-center display-none" style={{ backgroundImage: `url(${bgWelcome.src})` }} data-aos="fade-up" data-aos-duration="800">
+      <div className="w-full max-w-[1280px] h-auto py-15 bg-cover flex relative justify-between mt-2 items-center display-none" style={{ backgroundImage: `url(${bgWelcome.src})` }} data-aos="fade-up" data-aos-duration="800">
         <h1 className='font-[700] -mt-30 text-[48px] ml-20 text-white'>Jelajahi Gaya Hidup <br /> Rendah Emisi</h1>
         <Image src={truck.src} className='bounce' width={640} height={640} alt='image'/>
         <a href="#tentangkami">
