@@ -49,7 +49,7 @@ export default function Page() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await axios.post('http://localhost:5500/predict', formData, {
+      const response = await axios.post('https://greenly-machine.setionugraha.my.id/predict', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 

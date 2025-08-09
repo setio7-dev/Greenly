@@ -1,0 +1,8 @@
+- Cara Menjalankan Next JS
+1. Buka folder lalu jalankan perintah "npm install"
+2. Jalankan kode "npm run dev"
+
+- Cara Menjalankan Machine Learning
+1. Masuk ke folder Machine "cd ./machine"
+2. Install "pip install tensorflow keras numpy pillow python-multipart fastapi uvicorn" di terminal
+3. Jalankan dengan kode "uvicorn app:app --host 0.0.0.0 --port 5500"
