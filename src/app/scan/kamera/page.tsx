@@ -1,19 +1,83 @@
 "use client"
 import React, { useState, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import camera from '../../../../public/image/scan/camera.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import Webcam from 'react-webcam'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import { useScan } from '@/app/context/scanContext'
 
 export default function Page() {
-  const webcamRef = useRef(null)
-  const [facingMode, setFacingMode] = useState('environment')
-  const [file, setFile] = useState(null)
+  const webcamRef = useRef<Webcam>(null);
+  const [facingMode, setFacingMode] = useState('environment');
+  const [file, setFile] = useState<File | null>(null);
+  const previewUrl = file ? URL.createObjectURL(file) : null;
+  const { setResult } = useScan();
+  const navigate = useRouter();
 
   const capture = () => {
-    const imageSrc = webcamRef.current.getScreenshot()
-    setFile(imageSrc)
-  }
+    if (webcamRef.current) {
+      const imageSrc = webcamRef.current.getScreenshot();
+      if (imageSrc) {
+        const byteString = atob(imageSrc.split(',')[1]);
+        const mimeString = imageSrc.split(',')[0].split(':')[1].split(';')[0];
+        const ab = new ArrayBuffer(byteString.length);
+        const ia = new Uint8Array(ab);
+        for (let i = 0; i < byteString.length; i++) {
+          ia[i] = byteString.charCodeAt(i);
+        }
+        const blob = new Blob([ab], { type: mimeString });
+        const imageFile = new File([blob], 'capture.jpg', { type: mimeString });
+        setFile(imageFile);
+      }
+    }
+  };
+
+  const handleSubmit = async () => {
+    try {
+      if (!file) return;
+
+      Swal.fire({
+        title: 'Mengunggah...',
+        text: 'Mohon tunggu, proses unggah sedang berlangsung.',
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+      });
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await axios.post('http://localhost:5500/predict', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      const resultScan = response.data.class;
+      setResult(resultScan);
+      console.log('Hasil Scan:', resultScan);
+
+      Swal.fire({
+        title: 'Berhasil!',
+        text: 'File berhasil diunggah.',
+        icon: 'success',
+        confirmButtonText: 'Oke',
+        confirmButtonColor: 'green'
+      });
+
+      setTimeout(() => {
+        navigate.push('/scan/hasil');
+      }, 3000);
+    } catch (error) {
+      Swal.fire({
+        title: 'Gagal!',
+        text: 'Terjadi kesalahan saat mengunggah file.' + error,
+        icon: 'error',
+        confirmButtonText: 'Coba Lagi',
+        confirmButtonColor: 'red'
+      });
+    }
+  };
 
   return (
     <div className='flex relative flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>
@@ -46,7 +110,7 @@ export default function Page() {
         <Image src={camera.src} width={100} height={100} alt='image' className='w-[32px] lg:w-[40px] cursor-pointer h-auto' />
       </div>
 
-      {file && (
+      {file && previewUrl && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           <div className="relative bg-white p-2 lg:p-4 rounded-lg">
             <button
@@ -56,12 +120,13 @@ export default function Page() {
               ×
             </button>
             <Image
-              src={file}
+              src={previewUrl}
               alt="Preview"
               width={800}
               height={800}
               className="max-w-[90vw] max-h-[80vh] lg:max-w-[80vw] lg:max-h-[80vh] object-cover rounded-lg"
             />
+            <button onClick={handleSubmit} className='bg-[#84D300] mt-6 text-white rounded-lg border-[#84D300] border-2 px-8 py-2 hover:bg-transparent hover:text-[#84D300] text-[16px] cursor-pointer font-[500] duration-200'>Kirim</button>
           </div>
         </div>
       )}

@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Poppins, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
+import { ScanProvider } from "./context/scanContext";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -34,7 +35,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${pixelify.variable} overflow-x-hidden antialiased`}
       >
-        {children}
+        <ScanProvider>          
+          {children}
+        </ScanProvider>
       </body>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>

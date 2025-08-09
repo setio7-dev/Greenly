@@ -3,12 +3,18 @@ import React, { useState, useRef } from 'react'
 import Link from 'next/link'
 import upload from '../../../../public/image/scan/upload.png'
 import Image from 'next/image'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import { useRouter } from 'next/navigation'
+import { useScan } from '@/app/context/scanContext'
 
 export default function Page() {
     const [file, setFile] = useState<File | null>(null);
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [isDragging, setIsDragging] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const navigate = useRouter();
+    const { setResult } = useScan();
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = event.target.files?.[0];
@@ -46,6 +52,53 @@ export default function Page() {
         }
     }
 
+    const handleSubmit = async() => {
+        try {
+            Swal.fire({
+                title: 'Mengunggah...',
+                text: 'Mohon tunggu, proses unggah sedang berlangsung.',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            const formData = new FormData();
+            formData.append('file', file as Blob);
+
+            const response = await axios.post('http://localhost:5500/predict', formData,{
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            const resultScan = response.data.class;
+            setResult(resultScan);
+            console.log('Hasil Scan:', resultScan);
+
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'File berhasil diunggah.',
+                icon: 'success',
+                confirmButtonText: 'Oke',
+                confirmButtonColor: 'green'
+            });
+
+            setTimeout(() => {
+                navigate.push('/scan/hasil');
+            }, 3000);
+        } catch (error) {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Terjadi kesalahan saat mengunggah file.' + error,
+                icon: 'error',
+                confirmButtonText: 'Coba Lagi',
+                confirmButtonColor: 'red'
+            });
+        }
+    }
+
     return (
         <div className='flex flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>
             <div className="w-full text-white flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 lg:fixed relative cursor-pointer z-30">
@@ -70,8 +123,8 @@ export default function Page() {
                     <div className="mt-2">
                         {previewUrl ? (
                             <div>
-                                <Image src={previewUrl} width={200} height={200} alt='preview' className='object-contain rounded-lg'/>
-                                <button className='bg-[#84D300] mt-6 text-white rounded-lg border-[#84D300] border-2 px-8 py-2 hover:bg-transparent hover:text-[#84D300] text-[16px] cursor-pointer font-[500] duration-200'>Kirim</button>
+                                <Image src={previewUrl} width={200} height={200} alt='preview' className='object-cover h-[30vh] rounded-lg'/>
+                                <button onClick={handleSubmit} className='bg-[#84D300] mt-6 text-white rounded-lg border-[#84D300] border-2 px-8 py-2 hover:bg-transparent hover:text-[#84D300] text-[16px] cursor-pointer font-[500] duration-200'>Kirim</button>
                             </div>
                         ) : (
                             <p className='text-[#21212144] font-[500] lg:text-[14px] text-[12px]'>Tidak ada file yang diunggah</p>
