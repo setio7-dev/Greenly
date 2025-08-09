@@ -88,7 +88,7 @@ export default function GreenlyBot() {
         setTypingContent('');
         setLoading(false);
       }
-    }, 20);
+    }, 10);
   };
 
   const getCustomResponse = async (input: string) => {
