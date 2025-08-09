@@ -20,8 +20,8 @@ export default function Page() {
                 <div className="flex justify-between items-center absolute bottom-[0.2px] lg:px-10 px-6 h-[12vh] w-full rounded-[26px] bg-white/20 backdrop-blur-md">
                     <p className="text-white font-[600] lg:text-[28px] text-[20px]">Smart Bin</p>
                     <Link href="/kenali-sampah">
-                        <div className="p-[2px] rounded-lg bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] inline-block cursor-pointer">
-                          <button className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] text-white font-[500] lg:text-[18px] text-[12px] cursor-pointer lg:px-10 px-6 py-2 rounded-lg w-full h-full">
+                        <div className="p-[2px] rounded-lg bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] inline-block cursor-pointer">
+                          <button className="bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] text-white font-[500] lg:text-[18px] text-[12px] cursor-pointer lg:px-10 px-6 py-2 rounded-lg w-full h-full">
                             Mainkan
                           </button>
                         </div>
@@ -33,8 +33,8 @@ export default function Page() {
                 <div className="flex justify-between items-center absolute bottom-[0.2px] lg:px-10 px-6 h-[12vh] w-full rounded-[26px] bg-white/20 backdrop-blur-md">
                     <p className="text-white font-[600] lg:text-[28px] text-[20px]">Monster Junk</p>
                     <Link href="/monster-junk">
-                      <div className="p-[2px] rounded-lg bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] inline-block cursor-pointer">
-                        <button className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] text-white font-[500] lg:text-[18px] text-[12px] cursor-pointer lg:px-10 px-6 py-2 rounded-lg w-full h-full">
+                      <div className="p-[2px] rounded-lg bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] inline-block cursor-pointer">
+                        <button className="bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] text-white font-[500] lg:text-[18px] text-[12px] cursor-pointer lg:px-10 px-6 py-2 rounded-lg w-full h-full">
                           Mainkan
                         </button>
                       </div>

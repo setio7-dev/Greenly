@@ -86,7 +86,7 @@ export default function Category() {
       >
         {CategoryData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] lg:w-[360px] w-full min-h-[460px] rounded-lg px-6 py-10 flex flex-col items-start justify-center text-center shadow-md mx-auto">
+            <div className="bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] lg:w-[360px] w-full min-h-[460px] rounded-lg px-6 py-10 flex flex-col items-start justify-center text-center shadow-md mx-auto">
               <Image src={item.image} alt='image' width={item.width} height={160} className="mb-4 mx-auto"/>
               <h1 className="text-white text-[28px] font-[600]">{item.title}</h1>
               <p className="text-white text-sm mt-2 text-[12px] text-justify">{item.desc}</p>

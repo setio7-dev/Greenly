@@ -61,12 +61,12 @@ export default function Impact() {
           Kenali {''}
           <span className="relative inline-block">
             masalahnya
-            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] rounded-full"></span>
           </span>
           {' '} ambil {' '}
           <span className="relative inline-block">
             langkah
-            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-gradient-to-r bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] rounded-full"></span>
           </span>
           {' '} kecilnya
         </h1>
@@ -74,13 +74,13 @@ export default function Impact() {
           Rasakan {''}
           <span className="relative inline-block">
             dampak
-            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-gradient-to-r bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] rounded-full"></span>
           </span>
           {' '} besarnya {' '}
         </h1>
       </div>
       <div className="mt-16 font-poppins">
-        <h1 className='lg:text-[24px] display-none-block text-[18px] w-fit mx-auto z-20 relative font-[600] text-white lg:px-18 px-12 py-2 rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]' data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">DAMPAK</h1>
+        <h1 className='lg:text-[24px] display-none-block text-[18px] w-fit mx-auto z-20 relative font-[600] text-white lg:px-18 px-12 py-2 rounded-xl bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)]' data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">DAMPAK</h1>
         {/* Desktop */}
         <div className="flex flex-col gap-4 display-none -mt-2 items-start lg:px-0 lg:w-auto w-[320px] lg:overflow-x-visible overflow-x-auto">
            <div className="flex justify-center items-start">

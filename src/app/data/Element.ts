@@ -3,7 +3,7 @@ export const dropdownList = [
     id: 1,
     path: '/',
     label: 'Beranda',
-    color: 'linear-gradient(170deg, #BDFF00 0%, #00AD03 81%)',
+    color: 'linear-gradient(170deg, #036600 0%, #036600 81%)',
     splash: 'white',
     logo: '/logo/logo.png'
   },

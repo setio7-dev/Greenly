@@ -162,7 +162,7 @@ export default function Page() {
         </div>
         <div className='flex flex-col justify-center items-center font-poppins min-h-screen pb-20 lg:pt-30 pt-24 lg:px-40 px-6 container mx-auto'>
           <h1 className='lg:text-[34px] text-[20px] lg:text-start text-center font-[600] text-[#00AD03]'>Ayo Hitung Emisi Karbon Kamu Sekarang!</h1>
-          <div className="bg-[linear-gradient(140deg,_#BDFF00_0%,_#00AD03_81%)] w-full min-h-[70vh] rounded-lg mt-10 text-white py-12">
+          <div className="bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] w-full min-h-[70vh] rounded-lg mt-10 text-white py-12">
             <div className="flex flex-col justify-center items-center gap-8">
                 <h1 className='lg:text-[30px] text-[20px] font-[600]'>Jenis Transportasi</h1>
                 <div className="flex justify-center flex-wrap items-center lg:gap-10 gap-4">
@@ -190,7 +190,7 @@ export default function Page() {
                 <input value={distance} onChange={(e) => setDistance(e.target.value)} type="number" className='lg:text-[16px] lg:w-[300px] w-[200px] text-[14px] border-4 border-white rounded-xl px-3 outline-none py-2' />
             </div>
           </div>
-          <button onClick={handleTotalEmisi} className='bg-[#00AD03] text-white outline-none lg:text-[24px] text-[16px] font-[500] rounded-lg px-16 py-2 duration-200 border-2 border-[#00AD03] hover:bg-transparent hover:text-[#00AD03] cursor-pointer mt-12'>Hitung</button>
+          <button onClick={handleTotalEmisi} className='bg-[#548D2E] text-white outline-none lg:text-[24px] text-[16px] font-[500] rounded-lg px-16 py-2 duration-200 border-2 border-[#548D2E] hover:bg-transparent hover:text-[#548D2E] cursor-pointer mt-12'>Hitung</button>
           <div className="flex flex-col gap-4 mt-12 w-full">
             <h1 className='text-[#00AD03] font-[500] lg:text-[28px] text-[18px]'>Total</h1>
             <input type="text" value={`${total} kg CO₂e`} disabled className='lg:text-[16px] text-[14px] border-4 border-[#00AD03] rounded-xl px-3 outline-none py-3' />

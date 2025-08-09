@@ -425,9 +425,9 @@ export default function Page() {
 
       <Loading className={`${isLoading ? 'flex' : 'opacity-0 duration-400'}`}/>
       <div className={`absolute analog-game flex justify-center items-center gap-6 bottom-6 left-6 ${isLoading == false ? 'z-20' : 'z-0'}`}>
-        <img src={chevronLeft.src} className='w-[42px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronLeft' />
-        <img src={chevronDown.src} className='w-[42px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronDown' />
-        <img src={chevronRight.src} className='w-[42px] bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] p-1.5 rounded-full h-auto' alt="" id='chevronRight' />
+        <img src={chevronLeft.src} className='w-[42px] bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] p-1.5 rounded-full h-auto' alt="" id='chevronLeft' />
+        <img src={chevronDown.src} className='w-[42px] bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] p-1.5 rounded-full h-auto' alt="" id='chevronDown' />
+        <img src={chevronRight.src} className='w-[42px] bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] p-1.5 rounded-full h-auto' alt="" id='chevronRight' />
       </div>
 
       <p className="absolute lg:top-12 top-6 left-14 font-[700] text-[24px] lg:text-[40px] text-shadow-2xl text-[#FFAA00]" style={{ WebkitTextStroke: '1px black' }} id='score'>Skor: 0</p>

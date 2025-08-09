@@ -87,7 +87,7 @@ export default function Page() {
 
             setTimeout(() => {
                 navigate.push('/scan/hasil');
-            }, 3000);
+            }, 1000);
         } catch (error) {
             Swal.fire({
                 title: 'Gagal!',
@@ -100,7 +100,7 @@ export default function Page() {
     }
 
     return (
-        <div className='flex flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>
+        <div className='flex flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)]'>
             <div className="w-full text-white flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 lg:fixed relative cursor-pointer z-30">
                 <Link href="/scan" className="flex justify-center gap-1 cursor-pointer items-center">
                     <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />

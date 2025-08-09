@@ -14,7 +14,7 @@ export default function Solution() {
   return (
     <div className='w-full container mx-auto font-poppins lg:pb-38 pb-28 px-6 lg:px-16 flex justify-between items-center gap-8 flex-col lg:flex-row'>
       <div className="flex flex-col gap-4 w-[300px] lg:w-[600px]" data-aos="fade-right" data-aos-duration="800">
-        <h1 className='text-[#00AD03] font-[600] lg:text-[38px] text-[24px] leading-tight lg:w-[400px] w-auto'>
+        <h1 className='text-[#437655] font-[600] lg:text-[38px] text-[24px] leading-tight lg:w-[400px] w-auto'>
           Solusi Pencegahan Emisi Karbon
         </h1>
         <p className='lg:text-[16px] text-[14px] text-justify'>

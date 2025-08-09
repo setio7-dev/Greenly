@@ -30,8 +30,8 @@ export default function SplashScreen() {
     }, [thisRoute, thisItem]);
         
   return (
-    <div className={`w-full font-poppins ${thisItem[0]?.label === "Beranda" ? 'text-[#BDFF00]' : 'text-white'} flex items-center justify-center fixed flex-col z-50 overflow-hidden ${splash == false ? 'h-[0vh] opacity-0 duration-1000' : 'h-[100vh] opacity-100'}`} style={{ background: `${thisItem[0]?.splash}`}}>
-      <Image src={thisItem[0]?.logo} className='lg:w-[300px] bounce-show w-[200px] h-auto' width={300} height={300} alt='image'/>
+    <div className={`w-full font-poppins ${thisItem[0]?.label === "Beranda" ? 'text-[#036600]' : 'text-white'} flex items-center justify-center fixed flex-col z-50 overflow-hidden ${splash == false ? 'h-[0vh] opacity-0 duration-1000' : 'h-[100vh] opacity-100'}`} style={{ background: `${thisItem[0]?.splash}`}}>
+      <Image src={thisItem[0]?.logo} className={`bounce-show ${thisItem[0]?.label === "Beranda" ? "lg:w-[400px] w-[300px]" : 'lg:w-[300px]  w-[200px]'} h-auto`} width={800} height={300} alt='image'/>
       <h1 className='font-[500] lg:text-[30px] text-[24px] mt-6'>{thisItem[0]?.label}</h1>
       <p className='lg:text-[20px] text-[16px] mt-2'>Memuat...</p>
     </div>

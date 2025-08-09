@@ -6,7 +6,7 @@ import cloud from '../../../public/image/scan/cloud.png'
 
 export default function Page() {
   return (
-    <div className='flex flex-col text-white items-center justify-center h-screen font-poppins bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>
+    <div className='flex flex-col text-white items-center justify-center h-screen font-poppins bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)]'>
       <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 fixed cursor-pointer z-30">
         <Link href="/" className="flex justify-center gap-1 cursor-pointer items-center">
           <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />

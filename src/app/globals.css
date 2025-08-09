@@ -222,7 +222,7 @@ body {
 
 /* background color */
 /* Green */
-/* bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] */
+/* bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] */
 
 /* Water Blue */
 /* bg-[radial-gradient(circle,_rgba(0,151,220,1)_0%,_rgba(110,199,240,1)_100%)] */
@@ -235,5 +235,5 @@ body {
 /* bg-[radial-gradient(circle,_#6BB3F6_0%,_#7597B8_100%)] */
 
 /* text color */
-/* text-transparent bg-clip-text bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] */
+/* text-transparent bg-clip-text bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] */
 /* text-transparent bg-clip-text bg-[radial-gradient(circle,_rgba(0,151,220,0.21)_0%,_rgba(110,199,240,1)_100%)] */

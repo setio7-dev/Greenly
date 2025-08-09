@@ -18,7 +18,7 @@ export default function Solution() {
         <p className='lg:w-[620px] w-full lg:text-[16px] text-[12px] text-justify' data-aos="fade-right" data-aos-duration="800">Kita sering mendengar bahwa bumi sedang tidak baik-baik saja. Suhu global naik, hutan hilang, banjir makin sering datang, dan habitat satwa perlahan lenyap. Tapi kabar baiknya: kita masih bisa berbuat sesuatu, mulai dari hal paling sederhana di sekitar kita. Beberapa langkah kecil yang bisa kamu lakukan untuk membantu bumi tetap sehat — dan kabar baiknya, semua bisa dimulai sekarang juga!</p>
         <h1 className='text-transparent bg-clip-text bg-[linear-gradient(160deg,_#BDFF00_0%,_#00AD03_81%)] font-[800] text-[26px] lg:text-[42px] text-shadow-xl text-center lg:text-right' data-aos="fade-left" data-aos-duration="800">AKSI KECIL, <br /> DAMPAK BESAR</h1>
       </div>
-      <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" className='lg:text-[24px] text-[20px] mt-18 w-fit font-[600] text-white lg:px-14 px-8 py-2 rounded-xl bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)]'>SOLUSI PENANGANAN</h1>
+      <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" className='lg:text-[24px] text-[20px] mt-18 w-fit font-[600] text-white lg:px-14 px-8 py-2 rounded-xl bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)]'>SOLUSI PENANGANAN</h1>
       <div className="mt-[60px]">
         <div className='flex lg:flex-row flex-col lg:items-start items-center justify-center lg:gap-[80px] gap-8' data-aos-duration="800">
           <div data-aos="fade-up" data-aos-duration="900">

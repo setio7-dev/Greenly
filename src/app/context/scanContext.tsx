@@ -1,5 +1,5 @@
 "use client"
-import React, { createContext, useState, ReactNode, useContext } from "react";
+import React, { createContext, useState, ReactNode, useContext, useEffect } from "react";
 
 type ScanContextType = {
   result: string;
@@ -9,7 +9,19 @@ type ScanContextType = {
 const ScanContext = createContext<ScanContextType | undefined>(undefined);
 
 export const ScanProvider = ({ children }: { children: ReactNode }) => {
-  const [result, setResult] = useState<string>("");
+  const [result, setResultState] = useState<string>("");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("scanResult");
+    if (saved) {
+      setResultState(saved);
+    }
+  }, []);
+
+  const setResult = (value: string) => {
+    setResultState(value);
+    localStorage.setItem("scanResult", value);
+  };
 
   return (
     <ScanContext.Provider value={{ result, setResult }}>

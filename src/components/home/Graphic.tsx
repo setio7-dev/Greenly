@@ -114,7 +114,7 @@ export default function Graphic() {
         data: dataValue,
         fill: true,
         backgroundColor: 'rgba(0, 173, 3, 0.2)',
-        borderColor: '#00AD03',
+        borderColor: '#036600',
         tension: 0.4,
         pointBackgroundColor: 'white',
         pointBorderColor: '#00AD03'
@@ -144,7 +144,7 @@ export default function Graphic() {
   }
 
   return (
-    <div className='container w-full mx-auto font-poppins lg:pb-20 pb-28 px-6 lg:px-16' data-aos="fade-up" data-aos-duration="800">
+    <div className='container w-full mx-auto font-poppins lg:pb-10 pb-28 px-6 lg:px-16' data-aos="fade-up" data-aos-duration="800">
       <h1 className='lg:text-[32px] text-[24px] font-[500] w-full md:w-[400px]'>
         Presentase Data Dalam Bentuk Presentase
       </h1>
@@ -165,11 +165,11 @@ export default function Graphic() {
           <div
             onClick={() => setCategory(item.slug)}
             key={item.id}
-            className={`border-2 border-[#00AD03] lg:py-4 py-2 lg:px-6 px-4 rounded-lg transition-opacity ${
+            className={`border-2 border-[#036600] lg:py-4 py-2 lg:px-6 px-4 rounded-lg transition-opacity ${
               category === item.slug ? 'opacity-100' : 'opacity-60'
             } hover:opacity-100`}
           >
-            <p className='font-[600] text-[12px] lg:text-[20px] text-[#00AD03]'>{item.category}</p>
+            <p className='font-[600] text-[12px] lg:text-[20px] text-[#036600]'>{item.category}</p>
           </div>
         ))}
       </div>

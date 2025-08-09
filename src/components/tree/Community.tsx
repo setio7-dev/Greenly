@@ -29,12 +29,12 @@ export default function Community() {
         <h1 className="font-[600] text-center lg:text-[32px] text-[24px]">
           <span className="relative inline-block">
             Bergerak Bersama
-            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] rounded-full"></span>
           </span>
           {' '} untuk {' '}
           <span className="relative inline-block">
             Bumi
-            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-gradient-to-r bg-[linear-gradient(170deg,_#BDFF00_0%,_#00AD03_81%)] rounded-full"></span>
+            <span className="absolute left-0 bottom-[1px] w-full lg:h-[20px] h-[14px] -z-10 bg-gradient-to-r bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] rounded-full"></span>
           </span>
           {' '} yang Lebih Hijau {' '}
         </h1>

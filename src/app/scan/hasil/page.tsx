@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -11,11 +12,20 @@ export default function Page() {
     const [dataResult, setDataResult] = useState<ScanResultItem[]>([]);
     const { result } = useScan();
     const [loading, setLoading] = useState(true);
+    const [selectedPrimary, setSelectedPrimary] = useState(1);
+    const [howPrimary, setHowPrimary] = useState<any>({});
+    const [imagePrimary, setImagePrimary] = useState("");
+    const [imageChildren, setImageChildren] = useState<any>([]);
 
     interface RecycleItem {
       id: number
-      title: string
       image: string
+    }
+
+    interface HowItem {
+      id: number
+      title: string
+      desc: string
       link: string
     }
 
@@ -28,6 +38,8 @@ export default function Page() {
       impact1: string
       impact2: string
       recycle: RecycleItem[]
+      how: HowItem[]
+      iframe: string
     }
 
     useEffect(() => {
@@ -45,12 +57,31 @@ export default function Page() {
             setLoading(false);
         }
 
+        const filteredPrimaryData = () => {
+            const data = scanResult[0].how.find((item) => selectedPrimary === item.id);
+            if (data) {
+              setHowPrimary(data);
+            }
+        };
+
+        const filteredImage = () => {
+            const data = scanResult[0].recycle.find((item) => selectedPrimary === item.id);
+            if (data) {
+              setImagePrimary(data.image);
+            }
+
+            const dataChildren = scanResult[0].recycle.filter((item) => item.id !== selectedPrimary);
+            setImageChildren(dataChildren);
+        }
+
         fetchDataResult();
         fetchLoading();
-    }, [result]);
+        filteredPrimaryData();
+        filteredImage();
+    }, [result, selectedPrimary]);
   return (
     <div className='flex relative flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-white'>
-      <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 relative z-30">
+        <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 relative z-30">
            <Link href="/scan/pilih" className="flex justify-center gap-1 cursor-pointer items-center">
                <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />
                <h1 className="font-poppins font-[600] text-[18px] lg:text-[24px]">Kembali</h1>
@@ -65,19 +96,8 @@ export default function Page() {
                     <Image src={warning.src} width={30} height={30} alt='image' className='mr-2'/>
                     <p className='lg:text-[14px] text-[12px] text-[#FD3D3A] font-[600]'>Hati-Hati! Hal-hal yang tidak dapat diurai oleh alam.</p>
                 </div>
-            </div>
-            <div className="flex flex-col gap-6 mt-8">
-                <div className="flex flex-col gap-4 mb-4">
-                    <h1 className='font-[600] text-[24px]'>Cara Mendaur Ulang</h1>
-                    <p className='font-[400] lg:text-[14px] text-[12px] lg:w-[420px] text-justify w-full'>Adapun berbagai cara untuk mendaur ulang sampah plastik menjadi barang yang berguna antara lain:</p>
-                </div>
-                {dataResult[0]?.recycle.map((item) => (
-                    <a href={item.link} className="flex flex-col gap-4" key={item.id} target='_blank'>
-                        <p className='font-[400] lg:text-[16px] text-[14px] lg:w-[420px] w-full'>- {item.title}</p>
-                        <Image src={item.image} width={500} height={200} alt='image' className='lg:w-[420px] w-[300px] h-[200px] object-cover rounded-lg mb-2'/>
-                    </a>
-                ))}
-            </div>
+            </div>        
+            <iframe height="250" className='rounded-lg lg:w-[440px] w-full' src={scanResult[0]?.iframe} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>    
         </div>
         <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-2 lg:w-[620px] w-full">
@@ -95,6 +115,26 @@ export default function Page() {
             </div>
         </div>
        </div>
+       <div className="flex lg:flex-row flex-col justify-center items-center lg:px-0 px-6 mt-4 lg:pb-14 pb-20 gap-14 relative z-30">
+        <div className="flex flex-col items-start justify-start gap-6 lg:w-[400px] w-full">
+            <h1 className='font-[600] text-[#036600] lg:text-[28px] text-[22px]'>{howPrimary.title}</h1>
+            <p className='font-[400] text-[14px] text-black'>{howPrimary.desc}</p>
+            <a href={howPrimary?.link} target='_blank'>
+                <button className='bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)] rounded-full px-6 py-2 text-white font-[500] text-[14px] cursor-pointer mt-4'>Lihat lainnya</button>
+            </a>
+        </div>
+        <div className="flex lg:flex-row flex-col justify-center items-center gap-6">
+            <Image src={imagePrimary} width={500} height={400} alt='image' className='lg:w-[500px] h-auto w-[300px]'/>
+            <div className="flex flex-col gap-4">
+                {imageChildren.map((item: any) => (
+                    <div className="" key={item.id}>
+                        <Image src={item.image} width={400} height={100} alt='image' className='rounded-lg lg:w-[160px] h-auto w-full cursor-pointer hover:scale-105 duration-300' onClick={() => setSelectedPrimary(item.id)}/>
+                    </div>
+                ))}
+            </div>
+        </div>
+       </div>
+
        <div className={`${loading ? 'opacity-100 z-50' : 'opacity-0 z-0'} absolute duration-900`}>
         <Loading/>
        </div>

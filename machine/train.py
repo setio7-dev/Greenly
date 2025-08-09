@@ -10,7 +10,8 @@ train_generator = train_datagen.flow_from_directory(
     target_size=(150, 150),
     batch_size=32,
     class_mode='categorical',
-    subset='training'
+    subset='training',
+    shuffle=True
 )
 
 val_generator = train_datagen.flow_from_directory(
@@ -18,7 +19,8 @@ val_generator = train_datagen.flow_from_directory(
     target_size=(150, 150),
     batch_size=32,
     class_mode='categorical',
-    subset='validation'
+    subset='validation',
+    shuffle=True
 )
 
 model = Sequential([
@@ -35,9 +37,7 @@ model = Sequential([
 ])
 
 model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
-
 model.fit(train_generator, validation_data=val_generator, epochs=10)
-
 model.save('trash_model.h5')
 
 labels_map = train_generator.class_indices
