@@ -93,9 +93,9 @@ export default function GreenlyBot() {
 
   const getCustomResponse = async (input: string) => {
     const lower = input.toLowerCase();
-    if (lower.includes("who are you")) return "I'm **Natura**, your environmental awareness companion. Let's make the planet greener together!";
-    if (lower.includes("siapa kamu")) return "Saya **Natura**, teman peduli lingkungan Anda. Mari bersama-sama menjaga bumi kita!";
-    if (lower.includes("kamu siapa")) return "Saya **Natura**, asisten yang siap membantu Anda menjaga dan mencintai lingkungan.";
+    if (lower.includes("who are you")) return "I'm **Greenly Bot**, your environmental awareness companion. Let's make the planet greener together!";
+    if (lower.includes("siapa kamu")) return "Saya **Greenly Bot**, teman peduli lingkungan Anda. Mari bersama-sama menjaga bumi kita!";
+    if (lower.includes("kamu siapa")) return "Saya **Greenly Bot**, asisten yang siap membantu Anda menjaga dan mencintai lingkungan.";
     const result = await model.generateContent(input);
     return result.response.text();
   };

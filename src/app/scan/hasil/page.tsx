@@ -16,6 +16,7 @@ export default function Page() {
     const [howPrimary, setHowPrimary] = useState<any>({});
     const [imagePrimary, setImagePrimary] = useState("");
     const [imageChildren, setImageChildren] = useState<any>([]);
+    const [id, setId] = useState(1);
 
     interface RecycleItem {
       id: number
@@ -43,13 +44,15 @@ export default function Page() {
     }
 
     useEffect(() => {
-        const fetchDataResult = () => {
-            const filteredData = scanResult.filter((item) => {
-                const data = item.data.toLowerCase() == result.toLowerCase();
-                return data;
-            });
-
-            setDataResult(filteredData);
+       const fetchDataResult = () => {
+          const found = scanResult.find(
+            (item) => item.data.toLowerCase() === result.toLowerCase()
+          )
+      
+          if (found) {
+            setId(found.id - 1)
+            setDataResult([found])
+          }
         }
 
         const fetchLoading = async() => {
@@ -58,19 +61,19 @@ export default function Page() {
         }
 
         const filteredPrimaryData = () => {
-            const data = scanResult[0].how.find((item) => selectedPrimary === item.id);
+            const data = scanResult[id].how.find((item) => selectedPrimary === item.id);
             if (data) {
               setHowPrimary(data);
             }
         };
 
         const filteredImage = () => {
-            const data = scanResult[0].recycle.find((item) => selectedPrimary === item.id);
+            const data = scanResult[id].recycle.find((item) => selectedPrimary === item.id);
             if (data) {
               setImagePrimary(data.image);
             }
 
-            const dataChildren = scanResult[0].recycle.filter((item) => item.id !== selectedPrimary);
+            const dataChildren = scanResult[id].recycle.filter((item) => item.id !== selectedPrimary);
             setImageChildren(dataChildren);
         }
 
@@ -78,7 +81,7 @@ export default function Page() {
         fetchLoading();
         filteredPrimaryData();
         filteredImage();
-    }, [result, selectedPrimary]);
+    }, [result, selectedPrimary, id]);
   return (
     <div className='flex relative flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-white'>
         <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 relative z-30">
