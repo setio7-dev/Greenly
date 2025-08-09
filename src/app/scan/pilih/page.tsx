@@ -75,6 +75,7 @@ export default function Page() {
 
             const resultScan = response.data.class;
             setResult(resultScan);
+            console.log('Hasil Scan:', resultScan);
 
             Swal.fire({
                 title: 'Berhasil!',

@@ -5,10 +5,12 @@ import Image from 'next/image'
 import { scanResult } from '@/app/data/ScanResult'
 import warning from '../../../../public/image/scan/result/warning.png'
 import { useScan } from '@/app/context/scanContext'
+import Loading from '@/app/ui/Loading'
 
 export default function Page() {
     const [dataResult, setDataResult] = useState<ScanResultItem[]>([]);
     const { result } = useScan();
+    const [loading, setLoading] = useState(true);
 
     interface RecycleItem {
       id: number
@@ -38,17 +40,23 @@ export default function Page() {
             setDataResult(filteredData);
         }
 
+        const fetchLoading = async() => {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            setLoading(false);
+        }
+
         fetchDataResult();
+        fetchLoading();
     }, [result]);
   return (
     <div className='flex relative flex-col items-center lg:justify-center justify-start lg:py-0 py-2 min-h-screen font-poppins bg-white'>
-      <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 relative cursor-pointer z-30">
-           <Link href="/scan" className="flex justify-center gap-1 cursor-pointer items-center">
+      <div className="w-full flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 relative z-30">
+           <Link href="/scan/pilih" className="flex justify-center gap-1 cursor-pointer items-center">
                <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />
                <h1 className="font-poppins font-[600] text-[18px] lg:text-[24px]">Kembali</h1>
            </Link>
-       </div>
-       <div className="flex lg:flex-row flex-col justify-center items-start lg:gap-24 gap-14 lg:pt-12 pt-6 pb-14 lg:px-0 px-6">
+       </div>              
+       <div className="flex lg:flex-row flex-col justify-center items-start lg:gap-24 gap-14 lg:pt-12 pt-6 pb-14 lg:px-0 px-6" data-aos="fade-up" data-aos-duration="1000">
         <div className="flex flex-col gap-6 justify-center items-center">
             <div className="flex flex-col gap-6 justify-center items-center">
                 <Image src={dataResult[0]?.image} width={300} height={300} alt='image'/>
@@ -86,6 +94,9 @@ export default function Page() {
                 <p className='lg:text-[14px] text-[12px] font-[400] text-justify mt-4'><span className='font-[600]'>Kesehatan:</span> {dataResult[0]?.impact2}</p>
             </div>
         </div>
+       </div>
+       <div className={`${loading ? 'opacity-100 z-50' : 'opacity-0 z-0'} absolute duration-900`}>
+        <Loading/>
        </div>
     </div>
   )

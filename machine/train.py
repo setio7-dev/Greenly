@@ -2,7 +2,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Dropout
 from tensorflow.keras.optimizers import Adam
-import tensorflow as tf
 
 train_datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
 
@@ -41,6 +40,8 @@ model.fit(train_generator, validation_data=val_generator, epochs=10)
 
 model.save('trash_model.h5')
 
+labels_map = train_generator.class_indices
+sorted_labels = sorted(labels_map.items(), key=lambda x: x[1])
 with open('labels.txt', 'w') as f:
-    for label in train_generator.class_indices:
+    for label, _ in sorted_labels:
         f.write(f"{label}\n")
