@@ -100,7 +100,7 @@ export default function Page() {
                     <p className='lg:text-[14px] text-[12px] text-[#FD3D3A] font-[600]'>Hati-Hati! Hal-hal yang tidak dapat diurai oleh alam.</p>
                 </div>
             </div>        
-            <iframe height="250" className='rounded-lg lg:w-[440px] w-full' src={scanResult[0]?.iframe} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>    
+            <iframe height="250" className='rounded-lg lg:w-[440px] w-full' src={dataResult[0]?.iframe} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>    
         </div>
         <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-2 lg:w-[620px] w-full">

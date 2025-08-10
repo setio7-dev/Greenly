@@ -84,7 +84,7 @@ export const scanResult = [
         tips: "Sampah kaca berbahaya jika tidak dikelola dengan baik. Kurangi dengan memakai ulang botol atau stoples, menyerahkannya ke bank sampah, dan membungkus rapat pecahan kaca sebelum dibuang agar tidak melukai manusia atau hewan.",
         impact1: "Sampah kaca yang dibuang sembarangan dapat mencemari tanah, merusak habitat hewan, dan pecahannya berpotensi memicu kebakaran saat terkena sinar matahari langsung.",
         impact2: "Pecahan kaca dapat melukai manusia dan hewan, bahkan menimbulkan infeksi atau cedera permanen jika tidak ditangani dengan hati-hati.",
-        iframe: "https://www.youtube.com/embed/GVIk408ovts?si=MCeFX_7CMMQlvjcL",
+        iframe: "https://www.youtube.com/embed/Z7uNDey426Q?si=tjeYSvadhi8EK2ap",
         recycle: [
             {
                 id: 1,
@@ -139,7 +139,7 @@ export const scanResult = [
         tips: "Gunakan kembali kardus untuk penyimpanan atau pengiriman barang, dan jika sudah tak layak, potong serta lipat agar mudah dibawa ke tempat daur ulang. Simpan kardus di tempat kering untuk mencegah jamur dan hama.",
         impact1: "Kardus yang menumpuk di area terbuka dapat menarik rayap dan serangga serta mengganggu kebersihan. Jika tidak dikelola, penumpukannya juga bisa menghambat aliran air dan memicu banjir.",
         impact2: "Kardus lembap dapat menjadi sarang jamur yang memicu alergi dan gangguan pernapasan, sementara debunya dapat mengiritasi saluran pernapasan",
-        iframe: "https://www.youtube.com/embed/O-2gl4zhoKU?si=brL26VuOrd9zXQFQ",
+        iframe: "https://www.youtube.com/embed/PqU5DS6orUw?si=Yd1-25T1vNzdHIjD",
         recycle: [
             {
                 id: 1,

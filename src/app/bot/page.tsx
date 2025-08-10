@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <div className='flex flex-col text-white items-center justify-center min-h-screen font-poppins bg-[linear-gradient(150deg,_#58C229_30%,_#C7DF67_100%)]'>
       <div className="w-full text-white flex justify-between h-[11vh] lg:h-[14vh] items-center lg:px-20 pt-6 px-6 top-0 lg:fixed relative cursor-pointer z-30">
-          <Link href="/scan" className="flex justify-center gap-1 cursor-pointer items-center">
+          <Link href="/" className="flex justify-center gap-1 cursor-pointer items-center">
               <i className="bx bx-chevron-left text-[24px] lg:text-[36px]" />
               <h1 className="font-poppins font-[600] text-[18px] lg:text-[24px]">Kembali</h1>
           </Link>
