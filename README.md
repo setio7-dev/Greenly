@@ -16,12 +16,12 @@ Dibangun dengan **Next.js + TypeScript** di frontend, **Python** untuk logika/AI
 ## 🚀 Teknologi
 
 | Teknologi | Kegunaan |
-|---|---|
-| **Next.js** | Framework React untuk SSR/SSG & routing modern. |
-| **TypeScript** | Keamanan tipe & maintainability. |
-| **Tailwind CSS** | Styling cepat, konsisten, dan responsif. |
-| **Python** | Layanan micro-service (perhitungan emisi, model klasifikasi sampah, dsb.). |
-| **MySQL** | Database relasional (data emisi, riwayat kuis/permainan, kartu edukasi). |
+|-----------|----------|
+| ![Next.js](https://skillicons.dev/icons?i=nextjs) **Next.js** | Framework React untuk SSR/SSG & routing modern. |
+| ![TypeScript](https://skillicons.dev/icons?i=typescript) **TypeScript** | Keamanan tipe & maintainability. |
+| ![Tailwind CSS](https://skillicons.dev/icons?i=tailwind) **Tailwind CSS** | Styling cepat, konsisten, dan responsif. |
+| ![Python](https://skillicons.dev/icons?i=python) **Python** | Layanan micro-service (perhitungan emisi, model klasifikasi sampah, dsb.). |
+| ![MySQL](https://skillicons.dev/icons?i=mysql) **MySQL** | Database relasional (data emisi, riwayat kuis/permainan, kartu edukasi). |
 
 ---
 
