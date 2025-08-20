@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌿 Greenly — Website Edukasi & Aksi Lingkungan
 
-## Getting Started
+![Greenly Screenshot](./project.png)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📝 Deskripsi
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Greenly** adalah platform web bertema **lingkungan** untuk mengedukasi, mengukur, dan mengajak pengguna beraksi menjaga bumi.  
+Fokus utama Greenly adalah memberi alat praktis (kalkulator emisi, pengenal sampah, kartu edukasi, permainan) serta kanal **chatbot** untuk bertanya seputar eco-lifestyle.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dibangun dengan **Next.js + TypeScript** di frontend, **Python** untuk logika/AI service, **MySQL** sebagai database, dan **Tailwind CSS** untuk tampilan yang modern dan responsif.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Teknologi
 
-To learn more about Next.js, take a look at the following resources:
+| Teknologi | Kegunaan |
+|---|---|
+| **Next.js** | Framework React untuk SSR/SSG & routing modern. |
+| **TypeScript** | Keamanan tipe & maintainability. |
+| **Tailwind CSS** | Styling cepat, konsisten, dan responsif. |
+| **Python** | Layanan micro-service (perhitungan emisi, model klasifikasi sampah, dsb.). |
+| **MySQL** | Database relasional (data emisi, riwayat kuis/permainan, kartu edukasi). |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Fitur Utama
 
-## Deploy on Vercel
+### 1) 📉 Kalkulator Emisi  
+Hitung jejak karbon harian/bulanan (transportasi, listrik, makanan). Simpan riwayat & dapatkan rekomendasi penurunan emisi.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2) 💬 Chatbot  
+Tanya apa saja soal gaya hidup hijau—dari pemilahan sampah hingga tips hemat energi. Mendukung tanya jawab cepat dan link ke sumber belajar.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3) 🗑️ Kenali Sampah  
+Kenali kategori sampah (organik, anorganik, B3, daur ulang, kompos) dengan panduan praktis dan contoh. (Opsional: integrasi model Python untuk klasifikasi gambar.)
+
+### 4) 🧠 Kartu Edukasi  
+Kumpulan kartu topik (energi, air, plastik, transport) dengan ringkasan, fakta, dan tindakan kecil yang bisa dilakukan hari ini.
+
+### 5) 🎮 Permainan  
+Mini-games bertema lingkungan (quiz/tebak kategori/drag-and-drop pemilahan) untuk belajar sambil seru. Skor tersimpan di profil.
+
+---
+
+## 🌍 Manfaat
+- Membantu masyarakat memahami isu lingkungan dengan cara yang mudah dan interaktif.  
+- Menyediakan media edukasi digital ramah pengguna untuk semua kalangan.  
+- Mendorong aksi nyata dalam mengurangi dampak lingkungan sehari-hari.  
+
+---
+
+## 🎯 Tujuan
+- Memberikan informasi dan edukasi terkait keberlanjutan dan gaya hidup ramah lingkungan.  
+- Mengajak pengguna menghitung, mengenali, dan mengurangi jejak karbon pribadinya.  
+- Menjadi referensi digital yang terpercaya untuk pembelajaran dan aksi peduli bumi.  
+
+---
+
+## 📝 Penutup
+**Greenly** hadir sebagai solusi sederhana namun bermanfaat bagi masyarakat untuk belajar sekaligus beraksi menjaga lingkungan.  
+Dengan fitur-fitur yang interaktif, Greenly diharapkan dapat menginspirasi pengguna agar lebih peduli terhadap bumi dan berkontribusi dalam menciptakan masa depan yang lebih hijau. 🌱✨  
+
+---
+
+## 📜 Lisensi
+
+Proyek ini dirilis di bawah lisensi **MIT**. Silakan gunakan, modifikasi, dan kembangkan untuk kepentingan edukasi dan aksi lingkungan.
+
+---
